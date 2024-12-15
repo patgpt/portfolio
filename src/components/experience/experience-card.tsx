@@ -2,6 +2,7 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import { FaGlobe } from "react-icons/fa6";
 import type { ExperienceDetailDocument } from "../../../prismicio-types";
+import Link from "next/link";
 
 type ExperienceCardProps = {
   experience: ExperienceDetailDocument<string>;
@@ -11,16 +12,19 @@ type ExperienceCardProps = {
 
 export default function ExperienceCard({ experience }: ExperienceCardProps) {
   return (
-    <div className="card prose card-bordered shadow-lg">
+    <Link
+      href={`experience/${experience.uid}`}
+      className="card prose card-bordered shadow-lg"
+    >
       <div className="card-body">
         <PrismicNextImage
           className="h-24 w-24 rounded-sm"
           field={experience.data.company_logo}
         />
         <div className="flex">
-          <p className="text-sm text-neutral">
-            From: <span>{experience.data.start_date}</span> To:{" "}
-            <span>{experience.data.end_date}</span>
+          <p className="text-sm font-bold text-neutral">
+            <span>{experience.data.start_date} </span> -{" "}
+            <span>{experience.data.end_date}</span>{" "}
           </p>
         </div>
         <PrismicRichText field={experience.data.job_title} />
@@ -40,6 +44,6 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
           </PrismicNextLink>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

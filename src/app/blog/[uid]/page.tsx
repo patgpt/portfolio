@@ -9,7 +9,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import TagCloud from "@/components/ui/tag-cloud";
 import BlogPostCard from "@/components/BlogPostCard";
 
-type Params = { uid: string };
+type Params = { uid: string; key?: string };
 
 export default async function Page({ params }: { params: Promise<Params> }) {
   const { uid } = await params;

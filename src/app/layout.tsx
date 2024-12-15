@@ -25,12 +25,12 @@ export default function RootLayout({
           geistMono.variable,
           fontDisplay.variable,
           fontSans.variable,
-          "antialiased",
+          "font-sans antialiased",
         )}
       >
         <ThemeProvider attribute="data-theme">
           <Header />
-          <main className="flex min-h-screen flex-col bg-gradient-to-tr from-primary/20 via-accent/20 to-secondary/20 bg-[length:100%_100%] dark:from-primary/80 dark:via-accent/80 dark:to-secondary/80">
+          <main className="flex min-h-screen flex-col bg-gradient-to-tr from-primary/20 via-accent/20 to-secondary/20 bg-[length:100%_100%] font-sans text-base-content dark:from-primary/80 dark:via-accent/80 dark:to-secondary/80">
             {children}
           </main>
           <Footer />

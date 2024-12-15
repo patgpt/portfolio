@@ -3,6 +3,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import type { ExperienceDetailDocument } from "../../../prismicio-types";
 import ExperienceCard from "./experience-card";
+import { asDate } from "@prismicio/client";
 
 interface TimelineProps {
   experiences: ExperienceDetailDocument<string>[];
@@ -20,6 +21,12 @@ export const Timeline = ({ experiences }: TimelineProps) => {
     }
   }, [ref]);
 
+  const sortedExperiences = [...experiences].sort((a, b) => {
+    const dateA = asDate(a.data.start_date) ?? new Date(0);
+    const dateB = asDate(b.data.start_date) ?? new Date(0);
+    return dateB.getTime() - dateA.getTime();
+  });
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start 10%", "end 50%"],
@@ -31,7 +38,7 @@ export const Timeline = ({ experiences }: TimelineProps) => {
   return (
     <div className="w-full md:px-10" ref={containerRef}>
       <div className="relative mx-auto max-w-7xl pb-20" ref={ref}>
-        {experiences.map((experience, index) => (
+        {sortedExperiences.map((experience, index) => (
           <div
             key={experience.id}
             className="flex justify-start pt-10 md:gap-10 md:pt-40"
