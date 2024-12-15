@@ -12,7 +12,6 @@ function BlogPostCard({
 }) {
   return (
     <Link
-      as="article"
       href={`/blog/${post.uid}`}
       passHref
       key={key}
