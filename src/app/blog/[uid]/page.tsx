@@ -7,6 +7,7 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { PrismicNextImage } from "@prismicio/next";
 import TagCloud from "@/components/ui/tag-cloud";
+import BlogPostCard from "@/components/BlogPostCard";
 
 type Params = { uid: string };
 
@@ -14,11 +15,13 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const { uid } = await params;
   const client = createClient();
   const page = await client.getByUID("blog_post", uid).catch(() => notFound());
-
+  const relatedPosts = await client.getByType("blog_post", { pageSize: 3 });
   return (
     <Container className="prose prose-2xl flex-grow">
       <PrismicNextImage
-        className="h-20 w-20 rounded-lg object-cover"
+        height={400}
+        width={800}
+        className="h-full w-full rounded-lg object-contain"
         field={page.data.featured_image}
       />
       <h1 className="my-8 text-center text-5xl">{page.data.page_title}</h1>
@@ -26,6 +29,12 @@ export default async function Page({ params }: { params: Promise<Params> }) {
       <TagCloud tags={page.tags} />
 
       <SliceZone slices={page.data.slices} components={components} />
+      <h2 className="text-3xl">Related Posts</h2>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
+        {relatedPosts.results.map((post) => (
+          <BlogPostCard post={post} key={post.id} />
+        ))}
+      </div>
     </Container>
   );
 }

@@ -7,10 +7,10 @@ interface TagCloudProps {
 
 function TagCloud({ tags }: TagCloudProps) {
   return (
-    <div>
+    <div className="flex flex-wrap gap-2">
       {tags.map((tag) => (
         <span
-          className="badge badge-primary mr-4 p-4"
+          className="badge badge-primary mr-4 text-nowrap p-4"
           key={tag + Math.random()}
         >
           {tag}

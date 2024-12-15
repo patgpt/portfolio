@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans, Quicksand } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +10,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const fontSans = Noto_Sans({
+  variable: "--font-sans",
+  subsets: ["latin"],
+});
 
+const fontDisplay = Quicksand({
+  variable: "--font-display",
+  subsets: ["latin"],
+});
 
-export { geistSans, geistMono };
+export { geistSans, geistMono, fontSans, fontDisplay };

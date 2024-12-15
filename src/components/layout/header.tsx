@@ -10,7 +10,7 @@ async function Header() {
   return (
     <header className="navbar sticky top-0 z-50 bg-base-100/50 shadow-sm backdrop-blur-sm">
       <div className="navbar-start">
-        <Link className="prose prose-2xl ml-8" href="/">
+        <Link className="font-display prose prose-2xl ml-8" href="/">
           <span>Patrick Kelly</span>
         </Link>
         <div className="dropdown">
@@ -19,7 +19,7 @@ async function Header() {
           </div>
           <ul
             tabIndex={0}
-            className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
+            className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 font-sans shadow"
           >
             {navigation.data.navigation_menu.map((item, index) => (
               <li key={index}>
