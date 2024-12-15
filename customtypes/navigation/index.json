@@ -12,15 +12,15 @@
           "label": "Navigation Menu",
           "repeat": true,
           "fields": {
-            "navigation_link": {
+            "link": {
               "type": "Link",
               "config": {
-                "label": "Navigation Link",
+                "label": "Link",
                 "placeholder": "",
                 "select": null,
                 "allowTargetBlank": true,
                 "allowText": true,
-                "repeat": true
+                "repeat": false
               }
             }
           }

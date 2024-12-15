@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
 import { geistMono, geistSans } from "@/app/fonts";
 import { cn } from "@/app/lib/utils";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,11 +18,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(geistSans.variable, geistMono.variable, "antialiased")}
       >
-        {children}
+        <ThemeProvider attribute="data-theme">
+          <Header />
+          <main className="h-screen">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

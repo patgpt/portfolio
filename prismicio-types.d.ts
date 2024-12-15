@@ -11,6 +11,17 @@ type BlogDocumentDataSlicesSlice = never;
  */
 interface BlogDocumentData {
   /**
+   * Title field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Blog
+   * - **API ID Path**: blog.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *Blog*
    *
    * - **Field Type**: Slice Zone
@@ -169,6 +180,17 @@ type ExperienceDocumentDataSlicesSlice = never;
  * Content for Experience documents
  */
 interface ExperienceDocumentData {
+  /**
+   * Title field in *Experience*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Experience
+   * - **API ID Path**: experience.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
   /**
    * Slice Zone field in *Experience*
    *
@@ -512,14 +534,14 @@ export type HomeDocument<Lang extends string = string> =
  */
 export interface NavigationDocumentDataNavigationMenuItem {
   /**
-   * Navigation Link field in *Navigation → Navigation Menu*
+   * Link field in *Navigation → Navigation Menu*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.navigation_menu[].navigation_link
+   * - **API ID Path**: navigation.navigation_menu[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  navigation_link: prismic.Repeatable<prismic.LinkField>;
+  link: prismic.LinkField;
 }
 
 /**
