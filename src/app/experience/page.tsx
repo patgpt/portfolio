@@ -1,4 +1,4 @@
-import { PrismicRichText, SliceZone } from "@prismicio/react";
+import { SliceZone } from "@prismicio/react";
 import { Metadata } from "next";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
