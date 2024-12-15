@@ -2,7 +2,7 @@ import { SliceZone } from "@prismicio/react";
 import { Metadata } from "next";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import ExperienceCard from "@/components/experience/experience-card";
+import { Timeline } from "@/components/experience/timeline";
 
 export default async function Page() {
   const client = createClient();
@@ -14,16 +14,7 @@ export default async function Page() {
       <h1 className="prose prose-2xl mx-auto mb-8 text-center text-5xl">
         {page.data.title}
       </h1>
-      <ul className="timeline timeline-vertical prose-a:no-underline">
-        {experiences.results.map((experience, index) => (
-          <ExperienceCard
-            key={experience.id}
-            experience={experience}
-            index={index}
-            totalExperiences={experiences.results.length}
-          />
-        ))}
-      </ul>
+      <Timeline experiences={experiences.results} />
       <SliceZone slices={page.data.slices} components={components} />
     </div>
   );
