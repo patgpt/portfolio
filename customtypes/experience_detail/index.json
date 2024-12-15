@@ -46,6 +46,17 @@
           "multi": "heading3"
         }
       },
+      "project_website": {
+        "type": "Link",
+        "config": {
+          "label": "Project Website",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
+        }
+      },
       "experience_description": {
         "type": "StructuredText",
         "config": {

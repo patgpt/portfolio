@@ -1,14 +1,32 @@
+import { PrismicRichText, SliceZone } from "@prismicio/react";
 import { Metadata } from "next";
-import { SliceZone } from "@prismicio/react";
-
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import ExperienceCard from "@/components/experience/experience-card";
 
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("experience");
+  const experiences = await client.getByType("experience_detail");
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return (
+    <div className="container mx-auto my-8">
+      <h1 className="prose prose-2xl mx-auto mb-8 text-center text-5xl">
+        {page.data.title}
+      </h1>
+      <ul className="timeline timeline-vertical prose-a:no-underline">
+        {experiences.results.map((experience, index) => (
+          <ExperienceCard
+            key={experience.id}
+            experience={experience}
+            index={index}
+            totalExperiences={experiences.results.length}
+          />
+        ))}
+      </ul>
+      <SliceZone slices={page.data.slices} components={components} />
+    </div>
+  );
 }
 
 export async function generateMetadata(): Promise<Metadata> {

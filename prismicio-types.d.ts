@@ -94,6 +94,17 @@ interface BlogPostDocumentData {
   page_title: prismic.KeyTextField;
 
   /**
+   * Excerpt field in *Blog Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.excerpt
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  excerpt: prismic.KeyTextField;
+
+  /**
    * Featured Image field in *Blog Post*
    *
    * - **Field Type**: Image
@@ -340,6 +351,17 @@ interface ExperienceDetailDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   job_title: prismic.RichTextField;
+
+  /**
+   * Project Website field in *Experience Detail*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience_detail.project_website
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_website: prismic.LinkField;
 
   /**
    * Experience Description field in *Experience Detail*

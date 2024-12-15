@@ -24,7 +24,9 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="data-theme">
           <Header />
-          <main className="h-screen">{children}</main>
+          <main className="from-primary/20 via-accent/20 to-secondary/20 dark:from-primary/80 dark:via-accent/80 dark:to-secondary/80 bg-gradient-radial from-center min-h-screen flex flex-col bg-[length:100%_100%]">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

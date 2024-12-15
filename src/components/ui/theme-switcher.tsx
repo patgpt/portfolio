@@ -18,12 +18,12 @@ function ThemeSwitcher() {
   const themes = ["Default", "Retro", "Cyberpunk", "Valentine", "Aqua"];
 
   return (
-    <div className="dropdown mb-72">
+    <div className="dropdown dropdown-end">
       <button
         aria-haspopup="listbox"
         aria-expanded="false"
         aria-label="Select theme"
-        className="btn m-1"
+        className="btn btn-ghost btn-sm"
       >
         Theme
         <FaChevronDown className="h-3 w-3 opacity-60" aria-hidden="true" />
@@ -31,22 +31,24 @@ function ThemeSwitcher() {
       <ul
         role="listbox"
         aria-label="Theme options"
-        className="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl"
+        className="dropdown-content bg-base-300 rounded-box z-[1] mt-2 w-52 p-2 shadow-2xl"
       >
         {themes.map((t) => (
           <li key={t.toLowerCase()}>
-            <label className="flex items-center w-full cursor-pointer">
-              <input
-                type="radio"
-                name="theme-dropdown"
-                className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-                aria-label={`Switch to ${t} theme`}
-                value={t.toLowerCase()}
-                checked={theme === t.toLowerCase()}
-                onChange={() => setTheme(t.toLowerCase())}
-              />
-              <span className="ml-2">{t}</span>
-            </label>
+            <div className="form-control">
+              <label className="label cursor-pointer justify-start gap-2">
+                <input
+                  type="radio"
+                  name="theme-dropdown"
+                  className="radio"
+                  value={t.toLowerCase()}
+                  checked={theme === t.toLowerCase()}
+                  onChange={() => setTheme(t.toLowerCase())}
+                  aria-label={`Switch to ${t} theme`}
+                />
+                <span className="label-text">{t}</span>
+              </label>
+            </div>
           </li>
         ))}
       </ul>

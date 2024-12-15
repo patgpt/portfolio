@@ -3,12 +3,19 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import { isFilled } from "@prismicio/client";
+import Container from "@/components/layout/container";
 
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("home");
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return (
+    <Container>
+      {isFilled.keyText(page.data.title) && <h2>{page.data.title} </h2>}
+      <SliceZone slices={page.data.slices} components={components} />
+    </Container>
+  );
 }
 
 export async function generateMetadata(): Promise<Metadata> {
