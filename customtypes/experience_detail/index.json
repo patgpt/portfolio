@@ -57,6 +57,17 @@
           "repeat": false
         }
       },
+      "banner": {
+        "type": "Image",
+        "config": {
+          "label": "Banner",
+          "constraint": {
+            "width": 1600,
+            "height": 900
+          },
+          "thumbnails": []
+        }
+      },
       "experience_description": {
         "type": "StructuredText",
         "config": {
@@ -125,11 +136,25 @@
                   "C#",
                   "C++",
                   "Flutter",
-                  "Dart"
+                  "Dart",
+                  "Optimizely",
+                  "A/B Testing",
+                  "Feature flags"
                 ]
               }
             }
           }
+        }
+      },
+      "parent": {
+        "type": "Link",
+        "config": {
+          "label": "Parent",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
         }
       },
       "slices": {

@@ -12,15 +12,14 @@ type ExperienceCardProps = {
 
 export default function ExperienceCard({ experience }: ExperienceCardProps) {
   return (
-    <Link
-      href={`experience/${experience.uid}`}
-      className="card prose card-bordered shadow-lg"
-    >
-      <div className="card-body">
+    <div className="card prose card-compact border border-white/20 bg-white/30 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
+      <figure className="pt-4">
         <PrismicNextImage
-          className="h-24 w-24 rounded-sm"
+          className="h-24 w-24"
           field={experience.data.company_logo}
         />
+      </figure>
+      <div className="card-body">
         <div className="flex">
           <p className="text-sm font-bold text-neutral">
             <span>{experience.data.start_date} </span> -{" "}
@@ -37,13 +36,21 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
               </span>
             ))}
         </div>
-        <div className="link-primary mt-4 flex items-center">
-          <FaGlobe className="mr-2" />
-          <PrismicNextLink field={experience.data.project_website}>
-            Visit Project &rarr;
-          </PrismicNextLink>
+        <div className="mt-4 flex items-center gap-4">
+          <Link
+            href={`experience/${experience.uid}`}
+            className="btn btn-outline btn-sm no-underline"
+          >
+            Learn More &rarr;
+          </Link>
+          <div className="link-primary flex items-center">
+            <FaGlobe className="mr-2" />
+            <PrismicNextLink field={experience.data.project_website}>
+              Visit Project &rarr;
+            </PrismicNextLink>
+          </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

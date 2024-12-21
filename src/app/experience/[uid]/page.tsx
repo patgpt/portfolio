@@ -6,6 +6,7 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import Container from "@/components/layout/container";
 import { PrismicNextImage } from "@prismicio/next";
+import ParallaxImage from "@/components/ParallaxImage";
 
 type Params = { uid: string };
 
@@ -17,27 +18,31 @@ export default async function Page({ params }: { params: Promise<Params> }) {
     .catch(() => notFound());
 
   return (
-    <Container>
-      <PrismicNextImage
-        className="mx-auto rounded-box shadow-lg"
-        field={page.data.company_logo}
-      />
-      <h1 className="my-8 text-center text-5xl">{page.data.company_name}</h1>
-      <PrismicRichText field={page.data.job_title} />
-      <p className="text-sm text-base-content/60">
-        From: <span>{page.data.start_date}</span> To:{" "}
-        <span>{page.data.end_date}</span>
-      </p>
-      <PrismicRichText field={page.data.experience_description} />
+    <>
+      <ParallaxImage image={page.data.banner} />
 
-      {page.data.skill_tags.length > 0 &&
-        page.data.skill_tags.map((tag) => (
-          <span className="badge badge-primary mr-4 p-4" key={tag.tag}>
-            {tag.tag}
-          </span>
-        ))}
-      <SliceZone slices={page.data.slices} components={components} />
-    </Container>
+      <Container>
+        <PrismicNextImage
+          className="mx-auto rounded-box shadow-lg"
+          field={page.data.company_logo}
+        />
+        <h1 className="my-8 text-center text-5xl">{page.data.company_name}</h1>
+        <PrismicRichText field={page.data.job_title} />
+        <p className="text-sm text-base-content/60">
+          From: <span>{page.data.start_date}</span> To:{" "}
+          <span>{page.data.end_date}</span>
+        </p>
+        <PrismicRichText field={page.data.experience_description} />
+
+        {page.data.skill_tags.length > 0 &&
+          page.data.skill_tags.map((tag) => (
+            <span className="badge badge-primary mr-4 p-4" key={tag.tag}>
+              {tag.tag}
+            </span>
+          ))}
+        <SliceZone slices={page.data.slices} components={components} />
+      </Container>
+    </>
   );
 }
 

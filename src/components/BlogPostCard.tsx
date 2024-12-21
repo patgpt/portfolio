@@ -3,25 +3,18 @@ import Link from "next/link";
 import React from "react";
 import type { BlogPostDocument } from "../../prismicio-types";
 
-function BlogPostCard({
-  post,
-  key,
-}: {
-  post: BlogPostDocument<string>;
-  key: string | number;
-}) {
+function BlogPostCard({ post }: { post: BlogPostDocument<string> }) {
   return (
     <Link
       href={`/blog/${post.uid}`}
       passHref
-      key={key}
-      className="card card-normal shadow-2xl hover:shadow-md"
+      key={post.uid}
+      className="card card-compact mt-0 border border-white/20 bg-white/30 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl"
     >
+      <figure className="mt-0">
+        <PrismicNextImage className="w-full" field={post.data.featured_image} />
+      </figure>
       <div className="card-body">
-        <PrismicNextImage
-          className="h-30 w-30"
-          field={post.data.featured_image}
-        />
         <h2 className="prose prose-2xl">{post.data.page_title}</h2>
         <p className="line-clamp-4 overflow-hidden text-ellipsis">
           {post.data.excerpt}

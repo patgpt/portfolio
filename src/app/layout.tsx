@@ -6,6 +6,7 @@ import { fontDisplay, fontSans, geistMono, geistSans } from "@/app/fonts";
 import { cn } from "@/app/lib/utils";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import { BackToTop } from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   title: "Next.js + Prismic Starter",
@@ -34,6 +35,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <BackToTop />
         </ThemeProvider>
       </body>
     </html>

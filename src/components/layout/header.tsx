@@ -8,7 +8,7 @@ async function Header() {
   const client = createClient();
   const navigation = await client.getSingle("navigation");
   return (
-    <header className="navbar sticky top-0 z-50 bg-base-100/50 shadow-sm backdrop-blur-sm">
+    <header className="navbar sticky top-0 z-50 bg-base-100/50 shadow-2xl backdrop-blur-sm">
       <div className="navbar-start">
         <Link className="font-display prose prose-2xl ml-8" href="/">
           <span>Patrick Kelly</span>
