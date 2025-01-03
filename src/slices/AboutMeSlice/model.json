@@ -1,0 +1,39 @@
+{
+  "id": "about_me_slice",
+  "type": "SharedSlice",
+  "name": "AboutMeSlice",
+  "description": "AboutMeSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "about_me_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "About Me Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "get_in_touch_cta": {
+          "type": "Link",
+          "config": {
+            "label": "Get in touch CTA",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -612,7 +612,7 @@ interface HeaderDocumentData {
 export type HeaderDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HeaderDocumentData>, "header", Lang>;
 
-type HomeDocumentDataSlicesSlice = never;
+type HomeDocumentDataSlicesSlice = AboutMeSliceSlice;
 
 /**
  * Content for Home documents
@@ -850,11 +850,11 @@ export type PageDocument<Lang extends string = string> =
 type ServiceDocumentDataSlicesSlice = never;
 
 /**
- * Content for Service documents
+ * Content for Service_detail documents
  */
 interface ServiceDocumentData {
   /**
-   * Service Title field in *Service*
+   * Service Title field in *Service_detail*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -865,7 +865,40 @@ interface ServiceDocumentData {
   service_title: prismic.RichTextField;
 
   /**
-   * Slice Zone field in *Service*
+   * Service_summary field in *Service_detail*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.service_summary
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  service_summary: prismic.RichTextField;
+
+  /**
+   * Banner field in *Service_detail*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.banner
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  banner: prismic.ImageField<never>;
+
+  /**
+   * Service Content field in *Service_detail*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.service_content
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  service_content: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Service_detail*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -874,7 +907,7 @@ interface ServiceDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<ServiceDocumentDataSlicesSlice> /**
-   * Meta Title field in *Service*
+   * Meta Title field in *Service_detail*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
@@ -885,7 +918,7 @@ interface ServiceDocumentData {
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *Service*
+   * Meta Description field in *Service_detail*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
@@ -896,7 +929,7 @@ interface ServiceDocumentData {
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *Service*
+   * Meta Image field in *Service_detail*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -908,7 +941,7 @@ interface ServiceDocumentData {
 }
 
 /**
- * Service document from Prismic
+ * Service_detail document from Prismic
  *
  * - **API ID**: `service`
  * - **Repeatable**: `true`
@@ -923,7 +956,7 @@ export type ServiceDocument<Lang extends string = string> =
     Lang
   >;
 
-type ServicesDocumentDataSlicesSlice = never;
+type ServicesDocumentDataSlicesSlice = ServiceSlice;
 
 /**
  * Content for Services documents
@@ -1134,6 +1167,91 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Primary content in *AboutMeSlice → Default → Primary*
+ */
+export interface AboutMeSliceSliceDefaultPrimary {
+  /**
+   * About Me Text field in *AboutMeSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me_slice.default.primary.about_me_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  about_me_text: prismic.RichTextField;
+
+  /**
+   * Get in touch CTA field in *AboutMeSlice → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me_slice.default.primary.get_in_touch_cta
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  get_in_touch_cta: prismic.LinkField;
+}
+
+/**
+ * Default variation for AboutMeSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutMeSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutMeSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutMeSlice*
+ */
+type AboutMeSliceSliceVariation = AboutMeSliceSliceDefault;
+
+/**
+ * AboutMeSlice Shared Slice
+ *
+ * - **API ID**: `about_me_slice`
+ * - **Description**: AboutMeSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutMeSliceSlice = prismic.SharedSlice<
+  "about_me_slice",
+  AboutMeSliceSliceVariation
+>;
+
+/**
+ * Default variation for AnimatedProfileImage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AnimatedProfileImageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *AnimatedProfileImage*
+ */
+type AnimatedProfileImageSliceVariation = AnimatedProfileImageSliceDefault;
+
+/**
+ * AnimatedProfileImage Shared Slice
+ *
+ * - **API ID**: `animated_profile_image`
+ * - **Description**: An animated profile image component
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AnimatedProfileImageSlice = prismic.SharedSlice<
+  "animated_profile_image",
+  AnimatedProfileImageSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -1320,6 +1438,36 @@ export type NavigationItemSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for ParallaxImage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ParallaxImageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ParallaxImage*
+ */
+type ParallaxImageSliceVariation = ParallaxImageSliceDefault;
+
+/**
+ * ParallaxImage Shared Slice
+ *
+ * - **API ID**: `parallax_image`
+ * - **Description**: A parallax scrolling image component
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ParallaxImageSlice = prismic.SharedSlice<
+  "parallax_image",
+  ParallaxImageSliceVariation
+>;
+
+/**
  * Primary content in *ParallaxedBannerWithTitle → Default → Primary*
  */
 export interface ParallaxedBannerWithTitleSliceDefaultPrimary {
@@ -1421,6 +1569,81 @@ export type RichTextBlockSlice = prismic.SharedSlice<
   RichTextBlockSliceVariation
 >;
 
+/**
+ * Primary content in *Service → Default → Primary*
+ */
+export interface ServiceSliceDefaultPrimary {
+  /**
+   * Icon field in *Service → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Service → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Summary field in *Service → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.summary
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  summary: prismic.RichTextField;
+
+  /**
+   * Service_detail field in *Service → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.service_detail
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  service_detail: prismic.ContentRelationshipField<"service">;
+}
+
+/**
+ * Default variation for Service Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServiceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Service*
+ */
+type ServiceSliceVariation = ServiceSliceDefault;
+
+/**
+ * Service Shared Slice
+ *
+ * - **API ID**: `service`
+ * - **Description**: Service
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceSlice = prismic.SharedSlice<
+  "service",
+  ServiceSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1481,6 +1704,13 @@ declare module "@prismicio/client" {
       SettingsDocumentDataSocialLinksItem,
       SettingsDocumentDataFooterLinksItem,
       AllDocumentTypes,
+      AboutMeSliceSlice,
+      AboutMeSliceSliceDefaultPrimary,
+      AboutMeSliceSliceVariation,
+      AboutMeSliceSliceDefault,
+      AnimatedProfileImageSlice,
+      AnimatedProfileImageSliceVariation,
+      AnimatedProfileImageSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
@@ -1494,6 +1724,9 @@ declare module "@prismicio/client" {
       NavigationItemSliceDefaultPrimary,
       NavigationItemSliceVariation,
       NavigationItemSliceDefault,
+      ParallaxImageSlice,
+      ParallaxImageSliceVariation,
+      ParallaxImageSliceDefault,
       ParallaxedBannerWithTitleSlice,
       ParallaxedBannerWithTitleSliceDefaultPrimary,
       ParallaxedBannerWithTitleSliceVariation,
@@ -1502,6 +1735,10 @@ declare module "@prismicio/client" {
       RichTextBlockSliceDefaultPrimary,
       RichTextBlockSliceVariation,
       RichTextBlockSliceDefault,
+      ServiceSlice,
+      ServiceSliceDefaultPrimary,
+      ServiceSliceVariation,
+      ServiceSliceDefault,
     };
   }
 }

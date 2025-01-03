@@ -1,0 +1,59 @@
+{
+  "id": "service",
+  "type": "SharedSlice",
+  "name": "Service",
+  "description": "Service",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "icon": {
+          "type": "Image",
+          "config": {
+            "label": "Icon",
+            "constraint": {
+              "width": 250,
+              "height": 250
+            },
+            "thumbnails": []
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "summary": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Summary",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "service_detail": {
+          "type": "Link",
+          "config": {
+            "label": "Service_detail",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "service"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

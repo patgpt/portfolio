@@ -1,12 +1,13 @@
+import PrismicClientWrapper from "@/components/Providers/PrismicClientWrapper";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 
-import "./globals.css";
 import { fontDisplay, fontSans, geistMono, geistSans } from "@/app/fonts";
 import { cn } from "@/app/lib/utils";
-import Header from "@/components/Layout/Header";
-import Footer from "@/components/Layout/Footer";
 import { BackToTop } from "@/components/BackToTop";
+import Footer from "@/components/Layout/Footer";
+import Header from "@/components/Layout/Header";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Next.js + Prismic Starter",
@@ -30,12 +31,14 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="data-theme">
-          <Header />
-          <main className="flex min-h-screen flex-col bg-gradient-to-tr from-primary/20 via-accent/20 to-secondary/20 bg-[length:100%_100%] font-sans text-base-content dark:from-primary/80 dark:via-secondary/80 dark:to-secondary/80">
-            {children}
-          </main>
-          <Footer />
-          <BackToTop />
+          <PrismicClientWrapper>
+            <Header />
+            <main className="flex min-h-screen flex-col bg-gradient-to-tr from-primary/20 via-accent/20 to-secondary/20 bg-[length:100%_100%] font-sans text-base-content dark:from-primary/80 dark:via-secondary/80 dark:to-secondary/80">
+              {children}
+            </main>
+            <Footer />
+            <BackToTop />
+          </PrismicClientWrapper>
         </ThemeProvider>
       </body>
     </html>
