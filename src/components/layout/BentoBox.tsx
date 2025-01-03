@@ -54,9 +54,9 @@ export function BentoBox({
   return (
     <div
       className={clsx(
-        "card overflow-hidden bg-base-100 transition-all duration-300",
+        "card overflow-hidden bg-base-100 transition-all duration-300 ease-in-out",
         !disabled && !isLoading && "hover:scale-[1.02] hover:shadow-xl",
-        disabled && "opacity-60 cursor-not-allowed",
+        disabled && "cursor-not-allowed opacity-60",
         variant === "featured" ? "aspect-video" : "aspect-square",
         className,
       )}

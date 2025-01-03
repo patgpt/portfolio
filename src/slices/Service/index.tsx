@@ -1,5 +1,6 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import type { JSX } from "react";
 
 /**
  * Props for `Service`.

@@ -15,7 +15,7 @@ import {
 
 function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -59,7 +59,7 @@ function ThemeSwitcher() {
   ];
 
   const currentIcon =
-    themes.find((t) => t.name === (theme || "system"))?.icon || themes[0].icon;
+    themes.find((t) => t.name === (theme ?? "system"))?.icon || themes[0].icon;
 
   return (
     <div className="dropdown dropdown-end">
@@ -67,7 +67,7 @@ function ThemeSwitcher() {
         {currentIcon}
         <span className="sr-only">Theme switcher</span>
       </div>
-      <ul className="menu dropdown-content z-[1] max-h-[70vh] w-36 overflow-y-auto rounded-box bg-base-100 p-1 text-sm shadow-lg border border-base-300">
+      <ul className="menu dropdown-content z-[1] max-h-[70vh] w-36 overflow-y-auto rounded-box border border-base-300 bg-base-100 p-1 text-sm shadow-lg">
         {themes.map((t, i) =>
           t.divider ? (
             <li
@@ -82,13 +82,13 @@ function ThemeSwitcher() {
                 className={`flex items-center gap-1.5 py-1.5 text-base-content hover:bg-base-200 ${
                   theme === t.name ? "bg-base-200 font-medium" : ""
                 }`}
-                onClick={() => setTheme(t.name)}
+                onClick={() => t.name && setTheme(t.name)}
               >
                 <span className="text-base">{t.icon}</span>
                 <span className="text-xs">{t.label}</span>
               </button>
             </li>
-          )
+          ),
         )}
       </ul>
     </div>

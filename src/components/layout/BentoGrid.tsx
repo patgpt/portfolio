@@ -7,18 +7,28 @@ interface BentoGridProps {
   minItems?: number; // Add minimum items requirement
   maxItems?: number; // Add maximum items limit
   isLoading?: boolean;
+  /** Error callback for when min/max items validation fails */
+  onError?: (error: string) => void;
 }
 
 /**
- * A responsive grid layout component for displaying a featured post and side posts.
- * @param {BentoGridProps} props - The props object.
- * @returns {JSX.Element | null} The rendered BentoGrid component or null if no valid children are provided.
+ * BentoGrid - A responsive grid layout component for featured content
+ *
+ * @example
+ * ```tsx
+ * <BentoGrid minItems={1} maxItems={5}>
+ *   <BentoBox variant="featured">Featured Content</BentoBox>
+ *   <BentoBox>Side Content 1</BentoBox>
+ *   <BentoBox>Side Content 2</BentoBox>
+ * </BentoGrid>
+ * ```
  */
 export default function BentoGrid({
   children,
   minItems = 1,
   maxItems = 5,
   isLoading = false,
+  onError,
 }: BentoGridProps) {
   if (isLoading) {
     return (
@@ -46,9 +56,11 @@ export default function BentoGrid({
     React.isValidElement(child),
   );
 
-  // Validate min/max items
+  // Enhanced error handling
   if (childrenArray.length < minItems || childrenArray.length > maxItems) {
-    console.warn(`BentoGrid expects between ${minItems} and ${maxItems} items`);
+    const error = `BentoGrid expects between ${minItems} and ${maxItems} items`;
+    console.warn(error);
+    onError?.(error);
     return null;
   }
 
