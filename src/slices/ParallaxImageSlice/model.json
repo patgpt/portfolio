@@ -1,0 +1,49 @@
+{
+  "id": "parallax_image",
+  "type": "SharedSlice",
+  "name": "ParallaxImage",
+  "description": "A parallax scrolling image component",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "primaryFields": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "text": {
+          "type": "RichText",
+          "config": {
+            "label": "Text",
+            "placeholder": "Optional text overlay",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading1,heading2,heading3"
+          }
+        },
+        "center_text": {
+          "type": "Boolean",
+          "config": {
+            "label": "Center Text",
+            "default_value": false
+          }
+        },
+        "custom_class": {
+          "type": "Text",
+          "config": {
+            "label": "Custom CSS Class",
+            "placeholder": "Optional CSS class"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

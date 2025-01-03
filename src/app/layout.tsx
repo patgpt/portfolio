@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 
-import "./globals.css";
 import { fontDisplay, fontSans, geistMono, geistSans } from "@/app/fonts";
 import { cn } from "@/app/lib/utils";
-import Header from "@/components/Layout/Header";
-import Footer from "@/components/Layout/Footer";
 import { BackToTop } from "@/components/BackToTop";
+import Footer from "@/components/Layout/Footer";
+import Header from "@/components/Layout/Header";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Next.js + Prismic Starter",

@@ -75,3 +75,9 @@ export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
 
   return client;
 };
+
+export const client = prismic.createClient(repositoryName, {
+  routes: [
+    // Add your routes here
+  ],
+});

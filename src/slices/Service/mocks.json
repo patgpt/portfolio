@@ -1,0 +1,62 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"icon": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+					"width": 3500,
+					"height": 2338
+				},
+				"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?rect=581%2C0%2C2338%2C2338&w=250&h=250",
+				"width": 250,
+				"height": 250,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 581,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Signal"
+						}
+					}
+				]
+			},
+			"summary": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Fugiat ad ea aute nisi irure cupidatat deserunt dolor ea proident laborum id et aliquip dolore. Laboris culpa non tempor sint quis. Ex velit velit incididunt dolore excepteur duis aute nulla commodo."
+						}
+					}
+				]
+			},
+			"service_detail": {
+				"__TYPE__": "LinkContent",
+				"key": "e6defea7-8e51-44cd-858a-9aae68ffa3c6",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			}
+		},
+		"items": []
+	}
+]

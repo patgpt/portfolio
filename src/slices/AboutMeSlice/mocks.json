@@ -1,0 +1,29 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"about_me_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliqua fugiat adipisicing ut esse laboris consectetur."
+						}
+					}
+				]
+			},
+			"get_in_touch_cta": {
+				"__TYPE__": "LinkContent",
+				"key": "5058e3eb-5b16-4d9a-b597-2501afa708e9",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "wing"
+				}
+			}
+		},
+		"items": []
+	}
+]
