@@ -1,12 +1,14 @@
 "use client";
 
-import { useRef } from "react";
+import { ImageField, type RichTextField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { ImageField } from "@prismicio/client";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 interface ParallaxImageProps {
   image: ImageField;
+  text?: RichTextField | null | undefined;
+  centerText?: boolean;
 }
 
 export default function ParallaxImage({ image }: ParallaxImageProps) {
@@ -16,14 +18,14 @@ export default function ParallaxImage({ image }: ParallaxImageProps) {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
     <section ref={ref} className="relative h-[50vh] w-full overflow-hidden">
       <motion.div className="absolute inset-0 h-[120%] w-full" style={{ y }}>
         <PrismicNextImage
           field={image}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover brightness-[0.85]"
           priority
         />
       </motion.div>

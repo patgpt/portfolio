@@ -1,5 +1,7 @@
+import ParallaxImage from "@/components/ParallaxImage";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import type { JSX } from "react";
 
 /**
  * Props for `ParallaxedBannerWithTitle`.
@@ -18,8 +20,13 @@ const ParallaxedBannerWithTitle = ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for parallaxed_banner_with_title (variation:{" "}
-      {slice.variation}) Slices
+      <>
+        <ParallaxImage
+          centerText
+          text={slice.primary.title}
+          image={slice.primary.parallax_image}
+        />
+      </>
     </section>
   );
 };

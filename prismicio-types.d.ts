@@ -549,6 +549,47 @@ export type FooterDocument<Lang extends string = string> =
     Lang
   >;
 
+type HeaderDocumentDataSlicesSlice = LogoSlice;
+
+/**
+ * Content for Header documents
+ */
+interface HeaderDocumentData {
+  /**
+   * Title field in *Header*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Header*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HeaderDocumentDataSlicesSlice>;
+}
+
+/**
+ * Header document from Prismic
+ *
+ * - **API ID**: `header`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HeaderDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<HeaderDocumentData>, "header", Lang>;
+
 type HomeDocumentDataSlicesSlice = never;
 
 /**
@@ -1062,6 +1103,7 @@ export type AllDocumentTypes =
   | ExperienceDocument
   | ExperienceDetailDocument
   | FooterDocument
+  | HeaderDocument
   | HomeDocument
   | NavigationDocument
   | PageDocument
@@ -1142,6 +1184,48 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Logo → Default → Primary*
+ */
+export interface LogoSliceDefaultPrimary {
+  /**
+   * Logo field in *Logo → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo.default.primary.logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Logo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LogoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LogoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Logo*
+ */
+type LogoSliceVariation = LogoSliceDefault;
+
+/**
+ * Logo Shared Slice
+ *
+ * - **API ID**: `logo`
+ * - **Description**: Logo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LogoSlice = prismic.SharedSlice<"logo", LogoSliceVariation>;
+
+/**
  * Item in *NavigationItem → Default → Primary → Child_link*
  */
 export interface NavigationItemSliceDefaultPrimaryChildLinkItem {
@@ -1153,7 +1237,7 @@ export interface NavigationItemSliceDefaultPrimaryChildLinkItem {
    * - **API ID Path**: navigation_item.default.primary.child_link[].child_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  child_link: prismic.LinkField;
+  child_link: prismic.Repeatable<prismic.LinkField>;
 }
 
 /**
@@ -1352,6 +1436,9 @@ declare module "@prismicio/client" {
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataSlicesSlice,
+      HeaderDocument,
+      HeaderDocumentData,
+      HeaderDocumentDataSlicesSlice,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
@@ -1376,6 +1463,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      LogoSlice,
+      LogoSliceDefaultPrimary,
+      LogoSliceVariation,
+      LogoSliceDefault,
       NavigationItemSlice,
       NavigationItemSliceDefaultPrimaryChildLinkItem,
       NavigationItemSliceDefaultPrimary,

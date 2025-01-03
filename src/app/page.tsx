@@ -6,6 +6,7 @@ import { components } from "@/slices";
 import { isFilled } from "@prismicio/client";
 import Container from "@/components/layout/container";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import AnimatedProfileImage from "@/components/AnimatedProfileImage";
 
 export default async function Page() {
   const client = createClient();
@@ -14,12 +15,7 @@ export default async function Page() {
   return (
     <Container className="prose prose-2xl flex-grow">
       <div className="text-balance text-center">
-        {isFilled.image(page.data.pfp) && (
-          <PrismicNextImage
-            className="mx-auto rounded-full border-4 border-primary shadow-xl"
-            field={page.data.pfp}
-          />
-        )}
+        <AnimatedProfileImage image={page.data.pfp} />
         {isFilled.richText(page.data.introheading) && (
           <PrismicRichText field={page.data.introheading} />
         )}
@@ -27,7 +23,10 @@ export default async function Page() {
           <PrismicRichText field={page.data.introsubheading} />
         )}
         {isFilled.link(page.data.cta) && (
-          <PrismicNextLink className="btn btn-outline" field={page.data.cta}>
+          <PrismicNextLink
+            className="btn btn-outline btn-primary shadow-lg shadow-primary/80"
+            field={page.data.cta}
+          >
             {page.data.cta.text}
           </PrismicNextLink>
         )}

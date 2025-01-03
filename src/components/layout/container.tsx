@@ -10,7 +10,7 @@ export default function Container({
   return (
     <div
       className={cn(
-        "prose prose-2xl prose-a:no-underline container mx-auto my-8 px-4",
+        "container prose prose-2xl mx-auto my-8 h-full px-4 prose-a:no-underline",
         className,
       )}
     >

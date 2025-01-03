@@ -1,3 +1,4 @@
+import Navigation from "@/components/ui/navigation";
 import ThemeSwitcher from "@/components/ui/theme-switcher";
 import { createClient } from "@/prismicio";
 import { PrismicNextLink } from "@prismicio/next";
@@ -6,12 +7,13 @@ import { HiMenu } from "react-icons/hi";
 
 async function Header() {
   const client = createClient();
-  const navigation = await client.getSingle("navigation");
+  const navigation = await client.getByUID("navigation", "global-navigation");
+
   return (
     <header className="navbar sticky top-0 z-50 bg-base-100/50 shadow-2xl backdrop-blur-sm">
       <div className="navbar-start">
-        <Link className="font-display prose prose-2xl ml-8" href="/">
-          <span>Patrick Kelly</span>
+        <Link className="prose prose-2xl ml-8 font-display" href="/">
+          <span className="font-display">Patrick Kelly</span>
         </Link>
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -21,22 +23,21 @@ async function Header() {
             tabIndex={0}
             className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 font-sans shadow"
           >
-            {navigation.data.navigation_menu.map((item, index) => (
+            {navigation.data.slices.map((item, index) => (
               <li key={index}>
-                <PrismicNextLink field={item.link} className="btn btn-ghost" />
+                <PrismicNextLink
+                  field={item.primary.link}
+                  className="btn btn-ghost"
+                >
+                  {item.primary.link.text}
+                </PrismicNextLink>
               </li>
             ))}
           </ul>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {navigation.data.navigation_menu.map((item, index) => (
-            <li key={index}>
-              <PrismicNextLink field={item.link} className="btn btn-ghost" />
-            </li>
-          ))}
-        </ul>
+        <Navigation />
       </div>
       <div className="navbar-end">
         <ThemeSwitcher />

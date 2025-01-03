@@ -19,6 +19,15 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        profileFadeIn: {
+          '0%': { opacity: '0', transform: 'scale(0.8)' },
+          '100%': { opacity: '1', transform: 'scale(1)' }
+        }
+      },
+      animation: {
+        'profileFadeIn': 'profileFadeIn 0.6s ease-out forwards'
+      }
     },
   },
   plugins: [daisyui, typography],
