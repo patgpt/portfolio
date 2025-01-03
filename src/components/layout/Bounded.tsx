@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type JSX } from "react";
 import clsx from "clsx"; // Utility for conditional className merging. Preferred over string concatenation for cleaner, more maintainable code and handling conditional class logic effectively.
 
 /**
@@ -73,4 +73,4 @@ const Bounded = ({
   );
 };
 
-export default Bounded;  
+export default Bounded;
