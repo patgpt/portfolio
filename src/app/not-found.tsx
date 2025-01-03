@@ -1,4 +1,4 @@
-import Container from "@/components/layout/container";
+import Container from "@/components/Layout/Container";
 import React from "react";
 
 function Page() {

@@ -26,13 +26,24 @@
           "placeholder": ""
         }
       },
+      "thumbnail": {
+        "type": "Image",
+        "config": {
+          "label": "Thumbnail",
+          "constraint": {
+            "width": 400,
+            "height": 400
+          },
+          "thumbnails": []
+        }
+      },
       "featured_image": {
         "type": "Image",
         "config": {
           "label": "Featured Image",
           "constraint": {
-            "width": 400,
-            "height": 400
+            "width": 1600,
+            "height": 900
           },
           "thumbnails": []
         }
@@ -44,6 +55,17 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "banner": {
+        "type": "Image",
+        "config": {
+          "label": "Banner",
+          "constraint": {
+            "width": 1600,
+            "height": 900
+          },
+          "thumbnails": []
         }
       },
       "slices": {

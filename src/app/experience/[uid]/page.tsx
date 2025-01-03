@@ -4,9 +4,11 @@ import { PrismicRichText, SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import Container from "@/components/layout/container";
+import Container from "@/components/Layout/Container";
 import { PrismicNextImage } from "@prismicio/next";
 import ParallaxImage from "@/components/ParallaxImage";
+import Link from "next/link";
+import { FaChevronLeft } from "react-icons/fa";
 
 type Params = { uid: string };
 
@@ -22,6 +24,10 @@ export default async function Page({ params }: { params: Promise<Params> }) {
       <ParallaxImage image={page.data.banner} />
 
       <Container>
+        <Link href="/experience" className="btn btn-ghost gap-2">
+          <FaChevronLeft className="h-4 w-4" />
+          Back to experiences
+        </Link>
         <PrismicNextImage
           className="mx-auto rounded-box shadow-lg"
           field={page.data.company_logo}

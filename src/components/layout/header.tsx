@@ -1,5 +1,5 @@
-import Navigation from "@/components/ui/navigation";
-import ThemeSwitcher from "@/components/ui/theme-switcher";
+import Navigation from "@/components/Navigation";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { createClient } from "@/prismicio";
 import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";

@@ -4,9 +4,10 @@ import { PrismicRichText, SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { isFilled } from "@prismicio/client";
-import Container from "@/components/layout/container";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import Container from "@/components/Layout/Container";
+
 import AnimatedProfileImage from "@/components/AnimatedProfileImage";
+import { PrismicNextLink } from "@prismicio/next";
 
 export default async function Page() {
   const client = createClient();

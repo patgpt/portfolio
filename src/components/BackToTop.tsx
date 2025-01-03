@@ -34,7 +34,7 @@ export const BackToTop = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 text-4xl text-primary hover:text-primary/80"
+          className="fixed bottom-8 right-8 z-50 bg-base-200 text-4xl text-base-content hover:text-primary/80"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >

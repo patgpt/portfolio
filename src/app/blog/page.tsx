@@ -1,11 +1,11 @@
-import { Metadata } from "next";
 import { SliceZone } from "@prismicio/react";
+import { Metadata } from "next";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
-import Container from "@/components/layout/container";
 import BlogPostCard from "@/components/BlogPostCard";
+import Container from "@/components/Layout/Container";
 
 export default async function Page() {
   const client = createClient();
@@ -15,8 +15,11 @@ export default async function Page() {
   // const getAllByTag = async (tag:string)=> await client.getAllByTag(tag);
   return (
     <Container>
-      <h1 className="my-8 text-center text-5xl">{page.data.title}</h1>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <div className="mb-8"></div>
+      <h1 className="my-8 text-center text-5xl text-base-content">
+        {page.data.title}
+      </h1>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {posts.results.map((post) => (
           <BlogPostCard post={post} key={post.id} />
         ))}

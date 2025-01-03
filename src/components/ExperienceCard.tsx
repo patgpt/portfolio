@@ -1,7 +1,7 @@
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import { FaGlobe } from "react-icons/fa6";
-import type { ExperienceDetailDocument } from "../../../prismicio-types";
+import type { ExperienceDetailDocument } from "../../prismicio-types";
 import Link from "next/link";
 
 type ExperienceCardProps = {

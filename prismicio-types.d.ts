@@ -105,6 +105,17 @@ interface BlogPostDocumentData {
   excerpt: prismic.KeyTextField;
 
   /**
+   * Thumbnail field in *Blog Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.thumbnail
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  thumbnail: prismic.ImageField<never>;
+
+  /**
    * Featured Image field in *Blog Post*
    *
    * - **Field Type**: Image
@@ -125,6 +136,17 @@ interface BlogPostDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
+
+  /**
+   * Banner field in *Blog Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.banner
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  banner: prismic.ImageField<never>;
 
   /**
    * Slice Zone field in *Blog Post*

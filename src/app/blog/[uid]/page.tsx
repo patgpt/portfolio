@@ -1,41 +1,38 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PrismicRichText, SliceZone } from "@prismicio/react";
-import Container from "@/components/layout/container";
+import { PrismicRichText } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
-import { PrismicNextImage } from "@prismicio/next";
-import TagCloud from "@/components/ui/tag-cloud";
-import BlogPostCard from "@/components/BlogPostCard";
 
-type Params = { uid: string; key?: string };
+import Container from "@/components/Layout/Container";
+
+import ParallaxImage from "@/components/ParallaxImage";
+import Link from "next/link";
+import { FaChevronLeft } from "react-icons/fa";
+
+type Params = { uid: string };
 
 export default async function Page({ params }: { params: Promise<Params> }) {
   const { uid } = await params;
   const client = createClient();
   const page = await client.getByUID("blog_post", uid).catch(() => notFound());
-  const relatedPosts = await client.getByType("blog_post", { pageSize: 3 });
-  return (
-    <Container className="prose prose-2xl flex-grow">
-      <PrismicNextImage
-        height={400}
-        width={800}
-        className="h-full w-full rounded-lg object-contain"
-        field={page.data.featured_image}
-      />
-      <h1 className="my-8 text-center text-5xl">{page.data.page_title}</h1>
-      <PrismicRichText field={page.data.content} />
-      <TagCloud tags={page.tags} />
 
-      <SliceZone slices={page.data.slices} components={components} />
-      <h2 className="text-3xl">Related Posts</h2>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
-        {relatedPosts.results.map((post) => (
-          <BlogPostCard post={post} key={post.id} />
-        ))}
-      </div>
-    </Container>
+  return (
+    <>
+      <ParallaxImage
+        className="object-contain"
+        image={page.data.featured_image}
+      />
+
+      <Container>
+        <Link href="/blog" className="btn btn-ghost gap-2">
+          <FaChevronLeft className="h-4 w-4" />
+          Back to Blog
+        </Link>
+        <PrismicRichText field={page.data.content} />
+        {/* <SliceZone slices={page.data.slices} components={components} /> */}
+      </Container>
+    </>
   );
 }
 

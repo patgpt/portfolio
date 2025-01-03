@@ -2,7 +2,9 @@ import { SliceZone } from "@prismicio/react";
 import { Metadata } from "next";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import { Timeline } from "@/components/experience/timeline";
+import { Timeline } from "@/components/Timeline";
+import Link from "next/link";
+import { FaChevronLeft } from "react-icons/fa";
 
 export default async function Page() {
   const client = createClient();
@@ -11,6 +13,10 @@ export default async function Page() {
 
   return (
     <div className="container mx-auto my-8">
+      <Link href="/blog" className="btn btn-ghost gap-2">
+        <FaChevronLeft className="h-4 w-4" />
+        Back
+      </Link>
       <h1 className="prose prose-2xl mx-auto mb-8 text-center text-5xl">
         {page.data.title}
       </h1>

@@ -1,8 +1,8 @@
 "use client";
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import type { ExperienceDetailDocument } from "../../../prismicio-types";
-import ExperienceCard from "./experience-card";
+import type { ExperienceDetailDocument } from "../../prismicio-types";
+import ExperienceCard from "./ExperienceCard";
 import { asDate } from "@prismicio/client";
 
 interface TimelineProps {
