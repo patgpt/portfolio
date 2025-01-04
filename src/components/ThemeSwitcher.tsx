@@ -13,6 +13,33 @@ import {
   FiZap,
 } from "react-icons/fi";
 
+type ThemeName =
+  | "system"
+  | "light"
+  | "dark"
+  | "cupcake"
+  | "bumblebee"
+  | "emerald"
+  | "corporate"
+  | "retro"
+  | "valentine"
+  | "garden"
+  | "aqua"
+  | "forest"
+  | "lofi"
+  | "black"
+  | "dracula"
+  | "night"
+  | "cyberpunk"
+  | "synthwave"
+  | "halloween"
+  | "luxury"
+  | "business"
+  | "acid"
+  | "lemonade"
+  | "coffee"
+  | "winter";
+
 function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -59,7 +86,7 @@ function ThemeSwitcher() {
   ];
 
   const currentIcon =
-    themes.find((t) => t.name === (theme || "system"))?.icon || themes[0].icon;
+    themes.find((t) => t.name === (theme ?? "system"))?.icon || themes[0].icon;
 
   return (
     <div className="dropdown dropdown-end">
@@ -82,7 +109,7 @@ function ThemeSwitcher() {
                 className={`flex items-center gap-1.5 py-1.5 text-base-content hover:bg-base-200 ${
                   theme === t.name ? "bg-base-200 font-medium" : ""
                 }`}
-                // onClick={() => setTheme(t.name)}
+                onClick={() => setTheme(t.name as ThemeName)}
               >
                 <span className="text-base">{t.icon}</span>
                 <span className="text-xs">{t.label}</span>
