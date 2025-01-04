@@ -8,17 +8,27 @@ const SIZES = {
   large: "col-span-2 row-span-2",
 } as const;
 
+const VARIANTS = {
+  default: "",
+  primary: "bg-primary text-primary-content",
+  secondary: "bg-secondary text-secondary-content",
+  accent: "bg-accent text-accent-content",
+} as const;
+
 type BentoBoxSize = keyof typeof SIZES;
+type BentoBoxVariant = keyof typeof VARIANTS;
 
 export interface BentoBoxProps extends HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   size?: BentoBoxSize;
+  variant?: BentoBoxVariant;
 }
 
 export const BentoBox = React.memo(({
   children,
   className,
   size = 'small',
+  variant = 'default',
   ...props
 }: BentoBoxProps) => {
   return (
@@ -30,6 +40,7 @@ export const BentoBox = React.memo(({
         "border border-base-content/10",
         "break-inside-avoid bg-base-100",
         SIZES[size],
+        VARIANTS[variant],
         className
       )}
       {...props}

@@ -4703,6 +4703,16 @@ input.tab:checked + .tab-content, :is(.tab-active, [aria-selected="true"]) + .ta
   background-color: var(--fallback-er, oklch(var(--er) / .1));
 }
 
+.bg-accent {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-a, oklch(var(--a) / var(--tw-bg-opacity, 1)));
+}
+
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-s, oklch(var(--s) / var(--tw-bg-opacity, 1)));
+}
+
 .bg-opacity-90 {
   --tw-bg-opacity: .9;
 }
@@ -4995,6 +5005,16 @@ input.tab:checked + .tab-content, :is(.tab-active, [aria-selected="true"]) + .ta
 .text-error {
   --tw-text-opacity: 1;
   color: var(--fallback-er, oklch(var(--er) / var(--tw-text-opacity, 1)));
+}
+
+.text-accent-content {
+  --tw-text-opacity: 1;
+  color: var(--fallback-ac, oklch(var(--ac) / var(--tw-text-opacity, 1)));
+}
+
+.text-secondary-content {
+  --tw-text-opacity: 1;
+  color: var(--fallback-sc, oklch(var(--sc) / var(--tw-text-opacity, 1)));
 }
 
 .no-underline {
