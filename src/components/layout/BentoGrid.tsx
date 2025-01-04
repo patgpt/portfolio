@@ -1,4 +1,5 @@
-import { BentoBox } from "@/components/Layout/BentoBox";
+
+import { BentoBox } from "@/components/layout/BentoBox";
 import React from "react";
 import { v4 as uuidv4 } from "uuid"; // Import a proper UUID generator
 
