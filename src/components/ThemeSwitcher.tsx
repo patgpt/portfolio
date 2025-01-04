@@ -12,7 +12,7 @@ import {
   FiHeart,
   FiZap,
 } from "react-icons/fi";
-
+// ok fuck
 type ThemeName =
   | "system"
   | "light"
