@@ -1,0 +1,29 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"availability_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Voluptate elit incididunt anim commodo officia culpa nisi ut aute ut aliquip incididunt do. Ea dolore occaecat aliqua proident ea ea do exercitation duis nulla proident amet excepteur. Ipsum incididunt excepteur consectetur pariatur ex nulla."
+						}
+					}
+				]
+			},
+			"get_in_touch": {
+				"__TYPE__": "LinkContent",
+				"key": "03e8a461-e328-4101-961c-5a6584a6c969",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "forget"
+				}
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/agimanifesto/_dev/portfolio/src/slices/PfpSlice/index.tsx"],"sourcesContent":["\nimport { Content } from \"@prismicio/client\";\nimport { PrismicNextImage } from \"@prismicio/next\";\nimport { SliceComponentProps } from \"@prismicio/react\";\nimport type { JSX } from \"react\";\n\n/**\n * Props for `PfpSlice`.\n */\nexport type PfpSliceProps = SliceComponentProps<Content.PfpSliceSlice>;\n\n/**\n * Component for \"PfpSlice\" Slices.\n */\nconst PfpSlice = ({ slice }: PfpSliceProps): JSX.Element => {\n  return (\n    <BentoBox size=\"small\" className=\"text-center\">\n      <PrismicNextImage field={slice.primary.profile_image} className=\"rounded-full\" />\n    </BentoBox>\n  );\n};\n\nexport default PfpSlice;\n"],"names":[],"mappings":";;;;AAEA;;;AASA;;CAEC,GACD,MAAM,WAAW,CAAC,EAAE,KAAK,EAAiB;IACxC,qBACE,8OAAC;QAAS,MAAK;QAAQ,WAAU;kBAC/B,cAAA,8OAAC,+JAAA,CAAA,mBAAgB;YAAC,OAAO,MAAM,OAAO,CAAC,aAAa;YAAE,WAAU;;;;;;;;;;;AAGtE;uCAEe"}},
+    {"offset": {"line": 35, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

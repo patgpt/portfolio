@@ -1,35 +1,28 @@
 import { SliceZone } from "@prismicio/react";
 import { Metadata } from "next";
-
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import { MasonryGrid } from "@/components/MasonryGrid";
 
-
-export default async function Page() {
+export default async function Home() {
   const client = createClient();
-  const page = await client.getSingle("home");
+  const page = await client.getSingle("home", {
+    fetchLinks: [
+      'blog_post.uid',
+      'blog_post.page_title',
+      'blog_post.excerpt',
+      'blog_post.thumbnail',
+      'blog_post.featured_image',
+      'page.title'
+    ]
+  });
+
+  console.log('Home page data:', JSON.stringify(page.data, null, 2)); // Debug log
 
   return (
-    // <Container className="prose prose-2xl flex-grow">
-    //   <div className="text-balance text-center">
-    //     <AnimatedProfileImage image={page.data.pfp} />
-    //     {isFilled.richText(page.data.introheading) && (
-    //       <PrismicRichText field={page.data.introheading} />
-    //     )}
-    //     {isFilled.richText(page.data.introsubheading) && (
-    //       <PrismicRichText field={page.data.introsubheading} />
-    //     )}
-    //     {isFilled.link(page.data.cta) && (
-    //       <PrismicNextLink
-    //         className="btn btn-outline btn-primary shadow-lg shadow-primary/80"
-    //         field={page.data.cta}
-    //       >
-    //         {page.data.cta.text}
-    //       </PrismicNextLink>
-    //     )}
-    <SliceZone slices={page.data.slices} components={components} />
-    // </div>
-    // </Container>
+    <MasonryGrid>
+      <SliceZone slices={page.data.slices} components={components} />
+    </MasonryGrid>
   );
 }
 

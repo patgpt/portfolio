@@ -23,10 +23,25 @@ export default {
         profileFadeIn: {
           '0%': { opacity: '0', transform: 'scale(0.8)' },
           '100%': { opacity: '1', transform: 'scale(1)' }
-        }
+        },
+        greenPulse: {
+          '0%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 0 0 rgba(51, 217, 78, 0.7)'
+          },
+          '70%': {
+            transform: 'scale(1.1)',
+            boxShadow: '0 0 0 10px rgba(51, 217, 78, 0)'
+          },
+          '100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 0 0 rgba(51, 217, 78, 0)'
+          },
+        },
       },
       animation: {
-        'profileFadeIn': 'profileFadeIn 0.6s ease-out forwards'
+        'profileFadeIn': 'profileFadeIn 0.6s ease-out forwards',
+        'green-pulse': 'greenPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       }
     },
   },

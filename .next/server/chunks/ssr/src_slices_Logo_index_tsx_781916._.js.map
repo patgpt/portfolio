@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/agimanifesto/_dev/portfolio/src/slices/Logo/index.tsx"],"sourcesContent":["import { Content } from \"@prismicio/client\";\nimport { SliceComponentProps } from \"@prismicio/react\";\nimport type { JSX } from \"react\";\n\n/**\n * Props for `Logo`.\n */\nexport type LogoProps = SliceComponentProps<Content.LogoSlice>;\n\n/**\n * Component for \"Logo\" Slices.\n */\nconst Logo = ({ slice }: LogoProps): JSX.Element => {\n  return (\n    <section\n      data-slice-type={slice.slice_type}\n      data-slice-variation={slice.variation}\n    >\n      Placeholder component for logo (variation: {slice.variation}) Slices\n    </section>\n  );\n};\n\nexport default Logo;\n"],"names":[],"mappings":";;;;;AASA;;CAEC,GACD,MAAM,OAAO,CAAC,EAAE,KAAK,EAAa;IAChC,qBACE,8OAAC;QACC,mBAAiB,MAAM,UAAU;QACjC,wBAAsB,MAAM,SAAS;;YACtC;YAC6C,MAAM,SAAS;YAAC;;;;;;;AAGlE;uCAEe"}},
+    {"offset": {"line": 30, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

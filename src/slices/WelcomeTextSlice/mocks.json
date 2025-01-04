@@ -1,0 +1,31 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"welcome_text_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Somebody"
+						}
+					}
+				]
+			},
+			"welcome_text_subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aute pariatur adipisicing nostrud fugiat. Mollit cillum ut cupidatat consectetur sint sint sunt exercitation ea enim elit in aliquip laboris. Elit consectetur commodo proident laborum deserunt ut non deserunt nostrud."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

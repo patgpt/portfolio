@@ -1,0 +1,52 @@
+{
+  "id": "companies_i_have_worked_with_slice",
+  "type": "SharedSlice",
+  "name": "CompaniesIHaveWorkedWithSlice",
+  "description": "CompaniesIHaveWorkedWithSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "logo": {
+          "type": "Group",
+          "config": {
+            "label": "logo",
+            "repeat": true,
+            "fields": {
+              "company_logo": {
+                "type": "Image",
+                "config": {
+                  "label": "Company Logo",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "company_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Company Name",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "src/slices/index.ts -> ./PfpSlice": {
+    "id": "src/slices/index.ts -> ./PfpSlice",
+    "files": [
+      "static/chunks/node_modules_e15236._.js",
+      "static/chunks/src_2eb30b._.js",
+      "static/chunks/src_slices_PfpSlice_index_tsx_454d32._.js"
+    ]
+  },
+  "src/slices/index.ts -> ./AboutMeSlice": {
+    "id": "src/slices/index.ts -> ./AboutMeSlice",
+    "files": [
+      "static/chunks/node_modules_8728d8._.js",
+      "static/chunks/src_5a2595._.js",
+      "static/chunks/src_slices_AboutMeSlice_index_tsx_454d32._.js"
+    ]
+  },
+  "src/slices/index.ts -> ./RecentPostSlider": {
+    "id": "src/slices/index.ts -> ./RecentPostSlider",
+    "files": [
+      "static/chunks/node_modules_7a3db3._.js",
+      "static/chunks/src_d9d0b3._.js",
+      "static/chunks/src_slices_RecentPostSlider_index_tsx_454d32._.js"
+    ]
+  },
+  "src/slices/index.ts -> ./SocialSlice": {
+    "id": "src/slices/index.ts -> ./SocialSlice",
+    "files": [
+      "static/chunks/node_modules_16fbfd._.js",
+      "static/chunks/src_2a08f5._.js",
+      "static/chunks/src_slices_SocialSlice_index_tsx_454d32._.js"
+    ]
+  },
+  "src/slices/index.ts -> ./WelcomeTextSlice": {
+    "id": "src/slices/index.ts -> ./WelcomeTextSlice",
+    "files": [
+      "static/chunks/node_modules_74cb7b._.js",
+      "static/chunks/src_f206a5._.js",
+      "static/chunks/src_slices_WelcomeTextSlice_index_tsx_454d32._.js"
+    ]
+  },
+  "src/slices/index.ts -> ./CompaniesIHaveWorkedWithSlice": {
+    "id": "src/slices/index.ts -> ./CompaniesIHaveWorkedWithSlice",
+    "files": [
+      "static/chunks/node_modules_737563._.js",
+      "static/chunks/src_852c0c._.js",
+      "static/chunks/src_slices_CompaniesIHaveWorkedWithSlice_index_tsx_454d32._.js"
+    ]
+  },
+  "src/slices/index.ts -> ./AvailablitySlice": {
+    "id": "src/slices/index.ts -> ./AvailablitySlice",
+    "files": [
+      "static/chunks/node_modules_74cb7b._.js",
+      "static/chunks/src_6283f7._.js",
+      "static/chunks/src_slices_AvailablitySlice_index_tsx_454d32._.js"
+    ]
+  },
+  "src/slices/index.ts -> ./MyStack": {
+    "id": "src/slices/index.ts -> ./MyStack",
+    "files": [
+      "static/chunks/node_modules_8f2b9c._.js",
+      "static/chunks/src_c00c28._.js",
+      "static/chunks/src_slices_MyStack_index_tsx_454d32._.js"
+    ]
+  },
+  "src/slices/index.ts -> ./Hero": {
+    "id": "src/slices/index.ts -> ./Hero",
+    "files": [
+      "static/chunks/_b96ddb._.js",
+      "static/chunks/src_slices_Hero_index_tsx_454d32._.js"
+    ]
+  },
+  "src/slices/index.ts -> ./Logo": {
+    "id": "src/slices/index.ts -> ./Logo",
+    "files": [
+      "static/chunks/_2c9be0._.js",
+      "static/chunks/src_slices_Logo_index_tsx_454d32._.js"
+    ]
+  },
+  "src/slices/index.ts -> ./RichTextBlock": {
+    "id": "src/slices/index.ts -> ./RichTextBlock",
+    "files": [
+      "static/chunks/node_modules_4d86c8._.js",
+      "static/chunks/src_2bde0a._.js",
+      "static/chunks/src_slices_RichTextBlock_index_tsx_454d32._.js"
+    ]
+  },
+  "src/slices/index.ts -> ./Service": {
+    "id": "src/slices/index.ts -> ./Service",
+    "files": [
+      "static/chunks/_bbdd4d._.js",
+      "static/chunks/src_slices_Service_index_tsx_454d32._.js"
+    ]
+  },
+  "src/slices/index.ts -> ./NavigationItem": {
+    "id": "src/slices/index.ts -> ./NavigationItem",
+    "files": [
+      "static/chunks/node_modules_2726d7._.js",
+      "static/chunks/src_slices_NavigationItem_index_tsx_ccce45._.js",
+      "static/chunks/src_slices_NavigationItem_index_tsx_454d32._.js"
+    ]
+  }
+}

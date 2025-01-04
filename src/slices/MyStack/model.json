@@ -1,0 +1,61 @@
+{
+  "id": "my_stack",
+  "type": "SharedSlice",
+  "name": "MyStack",
+  "description": "MyStack",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "my_stack_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "My Stack Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "stack_items": {
+          "type": "Group",
+          "config": {
+            "label": "Stack Items",
+            "repeat": true,
+            "fields": {
+              "stack_icon": {
+                "type": "Image",
+                "config": {
+                  "label": "Stack Icon",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "stack_skill_number": {
+                "type": "Number",
+                "config": {
+                  "label": "Stack Skill Number",
+                  "placeholder": ""
+                }
+              },
+              "stack_title_text": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Stack Title Text",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

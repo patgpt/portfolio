@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/agimanifesto/_dev/portfolio/src/slices/Service/index.tsx"],"sourcesContent":["import { Content } from \"@prismicio/client\";\nimport { SliceComponentProps } from \"@prismicio/react\";\nimport type { JSX } from \"react\";\n\n/**\n * Props for `Service`.\n */\nexport type ServiceProps = SliceComponentProps<Content.ServiceSlice>;\n\n/**\n * Component for \"Service\" Slices.\n */\nconst Service = ({ slice }: ServiceProps): JSX.Element => {\n  return (\n    <section\n      data-slice-type={slice.slice_type}\n      data-slice-variation={slice.variation}\n    >\n      Placeholder component for service (variation: {slice.variation}) Slices\n    </section>\n  );\n};\n\nexport default Service;\n"],"names":[],"mappings":";;;;;AASA;;CAEC,GACD,MAAM,UAAU,CAAC,EAAE,KAAK,EAAgB;IACtC,qBACE,8OAAC;QACC,mBAAiB,MAAM,UAAU;QACjC,wBAAsB,MAAM,SAAS;;YACtC;YACgD,MAAM,SAAS;YAAC;;;;;;;AAGrE;uCAEe"}},
+    {"offset": {"line": 30, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
