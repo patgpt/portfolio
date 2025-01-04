@@ -1,0 +1,59 @@
+{
+  "id": "social_slice",
+  "type": "SharedSlice",
+  "name": "SocialSlice",
+  "description": "SocialSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "social_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Social Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "social_network": {
+          "type": "Group",
+          "config": {
+            "label": "Social Network",
+            "repeat": true,
+            "fields": {
+              "icon": {
+                "type": "Image",
+                "config": {
+                  "label": "icon",
+                  "constraint": {
+                    "width": 64,
+                    "height": 64
+                  },
+                  "thumbnails": []
+                }
+              },
+              "network_url": {
+                "type": "Link",
+                "config": {
+                  "label": "Network URL",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

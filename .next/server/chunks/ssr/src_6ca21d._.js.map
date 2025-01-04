@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/agimanifesto/_dev/portfolio/src/components/Container.tsx"],"sourcesContent":["import { cn } from \"@/app/lib/utils\";\n\nexport default function Container({\n  children,\n  className,\n}: {\n  children: React.ReactNode;\n  className?: string;\n}) {\n  return (\n    <div\n      className={cn(\n        \"container prose prose-2xl mx-auto my-8 h-full px-4 prose-a:no-underline\",\n        className,\n      )}\n    >\n      {children}\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;AAAA;;;AAEe,SAAS,UAAU,EAChC,QAAQ,EACR,SAAS,EAIV;IACC,qBACE,8OAAC;QACC,WAAW,CAAA,GAAA,0HAAA,CAAA,KAAE,AAAD,EACV,2EACA;kBAGD;;;;;;AAGP"}},
+    {"offset": {"line": 24, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 30, "column": 0}, "map": {"version":3,"sources":["file:///Users/agimanifesto/_dev/portfolio/src/app/not-found.tsx"],"sourcesContent":["import Container from \"@/components/Container\";\nimport React from \"react\";\n\nfunction Page() {\n  return (\n    <Container>\n      <h2 className=\"m-auto h-full text-center\">uh-oh</h2>\n    </Container>\n  );\n}\n\nexport default Page;\n"],"names":[],"mappings":";;;;AAAA;;;AAGA,SAAS;IACP,qBACE,8OAAC,+HAAA,CAAA,UAAS;kBACR,cAAA,8OAAC;YAAG,WAAU;sBAA4B;;;;;;;;;;;AAGhD;uCAEe"}},
+    {"offset": {"line": 54, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

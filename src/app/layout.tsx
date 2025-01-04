@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="data-theme">
           <Header />
-          <main className="flex min-h-screen flex-col bg-gradient-to-tr from-primary/20 via-accent/20 to-secondary/20 bg-[length:100%_100%] font-sans text-base-content dark:from-primary/80 dark:via-secondary/80 dark:to-secondary/80">
+          <main className="flex min-h-screen flex-col bg-gradient-to-tr from-primary/20 via-accent/20 to-secondary/20 bg-[length:100%_100%] font-sans text-base-content dark:from-primary/80 dark:via-secondary/80 dark:to-secondary/80 max-ww-7xl mx-auto prose prose:a:no-underline max-w-none p-4">
             {children}
           </main>
           <Footer />

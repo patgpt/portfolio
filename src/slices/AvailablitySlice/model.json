@@ -1,0 +1,39 @@
+{
+  "id": "availablity_slice",
+  "type": "SharedSlice",
+  "name": "AvailablitySlice",
+  "description": "AvailablitySlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "availability_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "availability text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "get_in_touch": {
+          "type": "Link",
+          "config": {
+            "label": "get in touch",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

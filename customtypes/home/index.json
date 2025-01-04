@@ -6,58 +6,32 @@
   "status": true,
   "json": {
     "Main": {
-      "title": {
-        "type": "Text",
-        "config": {
-          "label": "Title",
-          "placeholder": ""
-        }
-      },
-      "pfp": {
-        "type": "Image",
-        "config": {
-          "label": "PFP",
-          "constraint": {
-            "width": 400,
-            "height": 400
-          },
-          "thumbnails": []
-        }
-      },
-      "introheading": {
-        "type": "StructuredText",
-        "config": {
-          "label": "IntroHeading",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "multi": "heading2"
-        }
-      },
-      "introsubheading": {
-        "type": "StructuredText",
-        "config": {
-          "label": "IntroSubheading",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "multi": "heading3"
-        }
-      },
-      "cta": {
-        "type": "Link",
-        "config": {
-          "label": "CTA",
-          "placeholder": "",
-          "select": null,
-          "allowTargetBlank": true,
-          "allowText": true,
-          "repeat": false
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "recent_post_slider": {
+              "type": "SharedSlice"
+            },
+            "companies_i_have_worked_with_slice": {
+              "type": "SharedSlice"
+            },
+            "welcome_text_slice": {
+              "type": "SharedSlice"
+            },
+            "my_stack": {
+              "type": "SharedSlice"
+            },
+            "pfp_slice": {
+              "type": "SharedSlice"
+            },
+            "social_slice": {
+              "type": "SharedSlice"
+            },
+            "availablity_slice": {
+              "type": "SharedSlice"
+            },
             "about_me_slice": {
               "type": "SharedSlice"
             }

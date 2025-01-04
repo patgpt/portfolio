@@ -30,9 +30,6 @@
           "choices": {
             "rich_text_block": {
               "type": "SharedSlice"
-            },
-            "parallaxed_banner_with_title": {
-              "type": "SharedSlice"
             }
           }
         }

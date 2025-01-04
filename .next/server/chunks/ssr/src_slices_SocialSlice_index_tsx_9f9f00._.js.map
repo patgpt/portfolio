@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/agimanifesto/_dev/portfolio/src/slices/SocialSlice/index.tsx"],"sourcesContent":["import { Content } from \"@prismicio/client\";\nimport { SliceComponentProps } from \"@prismicio/react\";\n\n/**\n * Props for `SocialSlice`.\n */\nexport type SocialSliceProps = SliceComponentProps<Content.SocialSliceSlice>;\n\n/**\n * Component for \"SocialSlice\" Slices.\n */\nconst SocialSlice = ({ slice }: SocialSliceProps): JSX.Element => {\n  return (\n    <section\n      data-slice-type={slice.slice_type}\n      data-slice-variation={slice.variation}\n    >\n      <Bounded></Bounded>\n    </section>\n  );\n};\n\nexport default SocialSlice;\n"],"names":[],"mappings":";;;;;AAQA;;CAEC,GACD,MAAM,cAAc,CAAC,EAAE,KAAK,EAAoB;IAC9C,qBACE,8OAAC;QACC,mBAAiB,MAAM,UAAU;QACjC,wBAAsB,MAAM,SAAS;kBAErC,cAAA,8OAAC;;;;;;;;;;AAGP;uCAEe"}},
+    {"offset": {"line": 30, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

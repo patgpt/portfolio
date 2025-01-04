@@ -1,80 +1,44 @@
 import clsx from "clsx";
-import React, { type JSX } from "react";
+import React, { type HTMLAttributes } from "react";
 
-/**
- * Props for the BentoBox component.
- */
-export interface BentoBoxProps {
-  /**
-   * The child elements to render inside the box.
-   * Optional when isLoading is true.
-   */
-  children?: React.ReactNode;
+// Use const assertion for better type inference
+const SIZES = {
+  small: "col-span-1 row-span-1",
+  medium: "col-span-2 row-span-1",
+  large: "col-span-2 row-span-2",
+} as const;
 
-  /**
-   * The variant of the BentoBox. Defaults to "regular".
-   */
-  variant?: "featured" | "regular";
+type BentoBoxSize = keyof typeof SIZES;
 
-  /**
-   * Additional custom class names for the BentoBox.
-   */
-  className?: string;
-
-  /**
-   * Click handler for the BentoBox.
-   */
-  onClick?: () => void;
-
-  /**
-   * Disabled state for the BentoBox.
-   */
-  disabled?: boolean;
-
-  /**
-   * Loading state for the BentoBox.
-   */
-  isLoading?: boolean;
+export interface BentoBoxProps extends HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+  size?: BentoBoxSize;
 }
 
-/**
- * A flexible box component with hover effects, used to display content in different visual styles.
- *
- * @param props - The props object.
- * @returns The rendered BentoBox component.
- */
-export function BentoBox({
+export const BentoBox = React.memo(({
   children,
-  variant = "regular",
-  className = "",
-  onClick,
-  disabled = false,
-  isLoading = false,
-}: BentoBoxProps): JSX.Element {
+  className,
+  size = 'small',
+  ...props
+}: BentoBoxProps) => {
   return (
     <div
       className={clsx(
-        "card overflow-hidden bg-base-100 transition-all duration-300",
-        !disabled && !isLoading && "hover:scale-[1.02] hover:shadow-xl",
-        disabled && "opacity-60 cursor-not-allowed",
-        variant === "featured" ? "aspect-video" : "aspect-square",
-        className,
+        "card transition-all duration-300 group",
+        "hover:scale-[1.02] hover:shadow-xl",
+        "backdrop-blur-sm bg-opacity-90",
+        "border border-base-content/10",
+        "break-inside-avoid bg-base-100",
+        SIZES[size],
+        className
       )}
-      role={variant === "featured" ? "region" : "article"}
-      onClick={!disabled && !isLoading ? onClick : undefined}
-      aria-disabled={disabled || isLoading}
+      {...props}
     >
-      {isLoading ? (
-        <div className="card-body animate-pulse p-4">
-          <div className="skeleton h-32 w-full" />
-          <div className="space-y-3">
-            <div className="skeleton h-4 w-3/4" />
-            <div className="skeleton h-4 w-1/2" />
-          </div>
-        </div>
-      ) : (
-        <div className="card-body p-4">{children}</div>
-      )}
+      <div className="card-body">
+        {children}
+      </div>
     </div>
   );
-}
+});
+
+BentoBox.displayName = 'BentoBox';

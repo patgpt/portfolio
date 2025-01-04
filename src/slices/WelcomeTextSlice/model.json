@@ -1,0 +1,37 @@
+{
+  "id": "welcome_text_slice",
+  "type": "SharedSlice",
+  "name": "WelcomeTextSlice",
+  "description": "WelcomeTextSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "welcome_text_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Welcome Text Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "welcome_text_subheading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Welcome Text Subheading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3,paragraph"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

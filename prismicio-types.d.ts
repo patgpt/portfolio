@@ -612,67 +612,20 @@ interface HeaderDocumentData {
 export type HeaderDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HeaderDocumentData>, "header", Lang>;
 
-type HomeDocumentDataSlicesSlice = AboutMeSliceSlice;
+type HomeDocumentDataSlicesSlice =
+  | RecentPostSliderSlice
+  | CompaniesIHaveWorkedWithSliceSlice
+  | WelcomeTextSliceSlice
+  | MyStackSlice
+  | PfpSliceSlice
+  | SocialSliceSlice
+  | AvailablitySliceSlice
+  | AboutMeSliceSlice;
 
 /**
  * Content for Home documents
  */
 interface HomeDocumentData {
-  /**
-   * Title field in *Home*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * PFP field in *Home*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.pfp
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  pfp: prismic.ImageField<never>;
-
-  /**
-   * IntroHeading field in *Home*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.introheading
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  introheading: prismic.RichTextField;
-
-  /**
-   * IntroSubheading field in *Home*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.introsubheading
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  introsubheading: prismic.RichTextField;
-
-  /**
-   * CTA field in *Home*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.cta
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  cta: prismic.LinkField;
-
   /**
    * Slice Zone field in *Home*
    *
@@ -773,9 +726,7 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice =
-  | RichTextBlockSlice
-  | ParallaxedBannerWithTitleSlice;
+type PageDocumentDataSlicesSlice = RichTextBlockSlice;
 
 /**
  * Content for Page documents
@@ -1189,6 +1140,16 @@ export interface AboutMeSliceSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   get_in_touch_cta: prismic.LinkField;
+
+  /**
+   * Profile Image field in *AboutMeSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me_slice.default.primary.profile_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  profile_image: prismic.ImageField<never>;
 }
 
 /**
@@ -1222,33 +1183,142 @@ export type AboutMeSliceSlice = prismic.SharedSlice<
 >;
 
 /**
- * Default variation for AnimatedProfileImage Slice
+ * Primary content in *AvailablitySlice → Default → Primary*
+ */
+export interface AvailablitySliceSliceDefaultPrimary {
+  /**
+   * availability text field in *AvailablitySlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: availablity_slice.default.primary.availability_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  availability_text: prismic.RichTextField;
+
+  /**
+   * get in touch field in *AvailablitySlice → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: availablity_slice.default.primary.get_in_touch
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  get_in_touch: prismic.LinkField;
+}
+
+/**
+ * Default variation for AvailablitySlice Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type AnimatedProfileImageSliceDefault = prismic.SharedSliceVariation<
+export type AvailablitySliceSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<AvailablitySliceSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *AnimatedProfileImage*
+ * Slice variation for *AvailablitySlice*
  */
-type AnimatedProfileImageSliceVariation = AnimatedProfileImageSliceDefault;
+type AvailablitySliceSliceVariation = AvailablitySliceSliceDefault;
 
 /**
- * AnimatedProfileImage Shared Slice
+ * AvailablitySlice Shared Slice
  *
- * - **API ID**: `animated_profile_image`
- * - **Description**: An animated profile image component
+ * - **API ID**: `availablity_slice`
+ * - **Description**: AvailablitySlice
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type AnimatedProfileImageSlice = prismic.SharedSlice<
-  "animated_profile_image",
-  AnimatedProfileImageSliceVariation
+export type AvailablitySliceSlice = prismic.SharedSlice<
+  "availablity_slice",
+  AvailablitySliceSliceVariation
+>;
+
+/**
+ * Item in *CompaniesIHaveWorkedWithSlice → Default → Primary → logo*
+ */
+export interface CompaniesIHaveWorkedWithSliceSliceDefaultPrimaryLogoItem {
+  /**
+   * Company Logo field in *CompaniesIHaveWorkedWithSlice → Default → Primary → logo*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: companies_i_have_worked_with_slice.default.primary.logo[].company_logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  company_logo: prismic.ImageField<never>;
+
+  /**
+   * Company Name field in *CompaniesIHaveWorkedWithSlice → Default → Primary → logo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: companies_i_have_worked_with_slice.default.primary.logo[].company_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *CompaniesIHaveWorkedWithSlice → Default → Primary*
+ */
+export interface CompaniesIHaveWorkedWithSliceSliceDefaultPrimary {
+  /**
+   * Title field in *CompaniesIHaveWorkedWithSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: companies_i_have_worked_with_slice.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * logo field in *CompaniesIHaveWorkedWithSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: companies_i_have_worked_with_slice.default.primary.logo[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  logo: prismic.GroupField<
+    Simplify<CompaniesIHaveWorkedWithSliceSliceDefaultPrimaryLogoItem>
+  >;
+}
+
+/**
+ * Default variation for CompaniesIHaveWorkedWithSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CompaniesIHaveWorkedWithSliceSliceDefault =
+  prismic.SharedSliceVariation<
+    "default",
+    Simplify<CompaniesIHaveWorkedWithSliceSliceDefaultPrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *CompaniesIHaveWorkedWithSlice*
+ */
+type CompaniesIHaveWorkedWithSliceSliceVariation =
+  CompaniesIHaveWorkedWithSliceSliceDefault;
+
+/**
+ * CompaniesIHaveWorkedWithSlice Shared Slice
+ *
+ * - **API ID**: `companies_i_have_worked_with_slice`
+ * - **Description**: CompaniesIHaveWorkedWithSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CompaniesIHaveWorkedWithSliceSlice = prismic.SharedSlice<
+  "companies_i_have_worked_with_slice",
+  CompaniesIHaveWorkedWithSliceSliceVariation
 >;
 
 /**
@@ -1366,6 +1436,98 @@ type LogoSliceVariation = LogoSliceDefault;
 export type LogoSlice = prismic.SharedSlice<"logo", LogoSliceVariation>;
 
 /**
+ * Item in *MyStack → Default → Primary → Stack Items*
+ */
+export interface MyStackSliceDefaultPrimaryStackItemsItem {
+  /**
+   * Stack Icon field in *MyStack → Default → Primary → Stack Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: my_stack.default.primary.stack_items[].stack_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  stack_icon: prismic.ImageField<never>;
+
+  /**
+   * Stack Skill Number field in *MyStack → Default → Primary → Stack Items*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: my_stack.default.primary.stack_items[].stack_skill_number
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  stack_skill_number: prismic.NumberField;
+
+  /**
+   * Stack Title Text field in *MyStack → Default → Primary → Stack Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: my_stack.default.primary.stack_items[].stack_title_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  stack_title_text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *MyStack → Default → Primary*
+ */
+export interface MyStackSliceDefaultPrimary {
+  /**
+   * My Stack Text field in *MyStack → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: my_stack.default.primary.my_stack_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  my_stack_text: prismic.RichTextField;
+
+  /**
+   * Stack Items field in *MyStack → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: my_stack.default.primary.stack_items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  stack_items: prismic.GroupField<
+    Simplify<MyStackSliceDefaultPrimaryStackItemsItem>
+  >;
+}
+
+/**
+ * Default variation for MyStack Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MyStackSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MyStackSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MyStack*
+ */
+type MyStackSliceVariation = MyStackSliceDefault;
+
+/**
+ * MyStack Shared Slice
+ *
+ * - **API ID**: `my_stack`
+ * - **Description**: MyStack
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MyStackSlice = prismic.SharedSlice<
+  "my_stack",
+  MyStackSliceVariation
+>;
+
+/**
  * Item in *NavigationItem → Default → Primary → Child_link*
  */
 export interface NavigationItemSliceDefaultPrimaryChildLinkItem {
@@ -1468,60 +1630,110 @@ export type ParallaxImageSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *ParallaxedBannerWithTitle → Default → Primary*
+ * Primary content in *PfpSlice → Default → Primary*
  */
-export interface ParallaxedBannerWithTitleSliceDefaultPrimary {
+export interface PfpSliceSliceDefaultPrimary {
   /**
-   * Parallax Image field in *ParallaxedBannerWithTitle → Default → Primary*
+   * Profile Image field in *PfpSlice → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: parallaxed_banner_with_title.default.primary.parallax_image
+   * - **API ID Path**: pfp_slice.default.primary.profile_image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  parallax_image: prismic.ImageField<never>;
-
-  /**
-   * Title field in *ParallaxedBannerWithTitle → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: parallaxed_banner_with_title.default.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
+  profile_image: prismic.ImageField<never>;
 }
 
 /**
- * Default variation for ParallaxedBannerWithTitle Slice
+ * Default variation for PfpSlice Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ParallaxedBannerWithTitleSliceDefault =
-  prismic.SharedSliceVariation<
-    "default",
-    Simplify<ParallaxedBannerWithTitleSliceDefaultPrimary>,
-    never
-  >;
+export type PfpSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PfpSliceSliceDefaultPrimary>,
+  never
+>;
 
 /**
- * Slice variation for *ParallaxedBannerWithTitle*
+ * Slice variation for *PfpSlice*
  */
-type ParallaxedBannerWithTitleSliceVariation =
-  ParallaxedBannerWithTitleSliceDefault;
+type PfpSliceSliceVariation = PfpSliceSliceDefault;
 
 /**
- * ParallaxedBannerWithTitle Shared Slice
+ * PfpSlice Shared Slice
  *
- * - **API ID**: `parallaxed_banner_with_title`
- * - **Description**: ParallaxedBannerWithTitle
+ * - **API ID**: `pfp_slice`
+ * - **Description**: PfpSlice
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ParallaxedBannerWithTitleSlice = prismic.SharedSlice<
-  "parallaxed_banner_with_title",
-  ParallaxedBannerWithTitleSliceVariation
+export type PfpSliceSlice = prismic.SharedSlice<
+  "pfp_slice",
+  PfpSliceSliceVariation
+>;
+
+/**
+ * Item in *RecentPostSlider → Default → Primary → Related Post*
+ */
+export interface RecentPostSliderSliceDefaultPrimaryRelatedPostItem {
+  /**
+   * Blog Posts field in *RecentPostSlider → Default → Primary → Related Post*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_post_slider.default.primary.related_post[].blog_posts
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  blog_posts: prismic.ContentRelationshipField<"blog_post">;
+}
+
+/**
+ * Primary content in *RecentPostSlider → Default → Primary*
+ */
+export interface RecentPostSliderSliceDefaultPrimary {
+  /**
+   * Related Post field in *RecentPostSlider → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_post_slider.default.primary.related_post[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  related_post: prismic.GroupField<
+    Simplify<RecentPostSliderSliceDefaultPrimaryRelatedPostItem>
+  >;
+}
+
+/**
+ * Default variation for RecentPostSlider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RecentPostSliderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<RecentPostSliderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *RecentPostSlider*
+ */
+type RecentPostSliderSliceVariation = RecentPostSliderSliceDefault;
+
+/**
+ * RecentPostSlider Shared Slice
+ *
+ * - **API ID**: `recent_post_slider`
+ * - **Description**: RecentPostSlider
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RecentPostSliderSlice = prismic.SharedSlice<
+  "recent_post_slider",
+  RecentPostSliderSliceVariation
 >;
 
 /**
@@ -1644,6 +1856,143 @@ export type ServiceSlice = prismic.SharedSlice<
   ServiceSliceVariation
 >;
 
+/**
+ * Item in *SocialSlice → Default → Primary → Social Network*
+ */
+export interface SocialSliceSliceDefaultPrimarySocialNetworkItem {
+  /**
+   * icon field in *SocialSlice → Default → Primary → Social Network*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_slice.default.primary.social_network[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * Network URL field in *SocialSlice → Default → Primary → Social Network*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_slice.default.primary.social_network[].network_url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  network_url: prismic.LinkField;
+}
+
+/**
+ * Primary content in *SocialSlice → Default → Primary*
+ */
+export interface SocialSliceSliceDefaultPrimary {
+  /**
+   * Social Text field in *SocialSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_slice.default.primary.social_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  social_text: prismic.RichTextField;
+
+  /**
+   * Social Network field in *SocialSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_slice.default.primary.social_network[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  social_network: prismic.GroupField<
+    Simplify<SocialSliceSliceDefaultPrimarySocialNetworkItem>
+  >;
+}
+
+/**
+ * Default variation for SocialSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SocialSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SocialSlice*
+ */
+type SocialSliceSliceVariation = SocialSliceSliceDefault;
+
+/**
+ * SocialSlice Shared Slice
+ *
+ * - **API ID**: `social_slice`
+ * - **Description**: SocialSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialSliceSlice = prismic.SharedSlice<
+  "social_slice",
+  SocialSliceSliceVariation
+>;
+
+/**
+ * Primary content in *WelcomeTextSlice → Default → Primary*
+ */
+export interface WelcomeTextSliceSliceDefaultPrimary {
+  /**
+   * Welcome Text Heading field in *WelcomeTextSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: welcome_text_slice.default.primary.welcome_text_heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  welcome_text_heading: prismic.RichTextField;
+
+  /**
+   * Welcome Text Subheading field in *WelcomeTextSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: welcome_text_slice.default.primary.welcome_text_subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  welcome_text_subheading: prismic.RichTextField;
+}
+
+/**
+ * Default variation for WelcomeTextSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WelcomeTextSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WelcomeTextSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WelcomeTextSlice*
+ */
+type WelcomeTextSliceSliceVariation = WelcomeTextSliceSliceDefault;
+
+/**
+ * WelcomeTextSlice Shared Slice
+ *
+ * - **API ID**: `welcome_text_slice`
+ * - **Description**: WelcomeTextSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WelcomeTextSliceSlice = prismic.SharedSlice<
+  "welcome_text_slice",
+  WelcomeTextSliceSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1708,9 +2057,15 @@ declare module "@prismicio/client" {
       AboutMeSliceSliceDefaultPrimary,
       AboutMeSliceSliceVariation,
       AboutMeSliceSliceDefault,
-      AnimatedProfileImageSlice,
-      AnimatedProfileImageSliceVariation,
-      AnimatedProfileImageSliceDefault,
+      AvailablitySliceSlice,
+      AvailablitySliceSliceDefaultPrimary,
+      AvailablitySliceSliceVariation,
+      AvailablitySliceSliceDefault,
+      CompaniesIHaveWorkedWithSliceSlice,
+      CompaniesIHaveWorkedWithSliceSliceDefaultPrimaryLogoItem,
+      CompaniesIHaveWorkedWithSliceSliceDefaultPrimary,
+      CompaniesIHaveWorkedWithSliceSliceVariation,
+      CompaniesIHaveWorkedWithSliceSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
@@ -1719,6 +2074,11 @@ declare module "@prismicio/client" {
       LogoSliceDefaultPrimary,
       LogoSliceVariation,
       LogoSliceDefault,
+      MyStackSlice,
+      MyStackSliceDefaultPrimaryStackItemsItem,
+      MyStackSliceDefaultPrimary,
+      MyStackSliceVariation,
+      MyStackSliceDefault,
       NavigationItemSlice,
       NavigationItemSliceDefaultPrimaryChildLinkItem,
       NavigationItemSliceDefaultPrimary,
@@ -1727,10 +2087,15 @@ declare module "@prismicio/client" {
       ParallaxImageSlice,
       ParallaxImageSliceVariation,
       ParallaxImageSliceDefault,
-      ParallaxedBannerWithTitleSlice,
-      ParallaxedBannerWithTitleSliceDefaultPrimary,
-      ParallaxedBannerWithTitleSliceVariation,
-      ParallaxedBannerWithTitleSliceDefault,
+      PfpSliceSlice,
+      PfpSliceSliceDefaultPrimary,
+      PfpSliceSliceVariation,
+      PfpSliceSliceDefault,
+      RecentPostSliderSlice,
+      RecentPostSliderSliceDefaultPrimaryRelatedPostItem,
+      RecentPostSliderSliceDefaultPrimary,
+      RecentPostSliderSliceVariation,
+      RecentPostSliderSliceDefault,
       RichTextBlockSlice,
       RichTextBlockSliceDefaultPrimary,
       RichTextBlockSliceVariation,
@@ -1739,6 +2104,15 @@ declare module "@prismicio/client" {
       ServiceSliceDefaultPrimary,
       ServiceSliceVariation,
       ServiceSliceDefault,
+      SocialSliceSlice,
+      SocialSliceSliceDefaultPrimarySocialNetworkItem,
+      SocialSliceSliceDefaultPrimary,
+      SocialSliceSliceVariation,
+      SocialSliceSliceDefault,
+      WelcomeTextSliceSlice,
+      WelcomeTextSliceSliceDefaultPrimary,
+      WelcomeTextSliceSliceVariation,
+      WelcomeTextSliceSliceDefault,
     };
   }
 }

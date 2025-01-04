@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/agimanifesto/_dev/portfolio/src/slices/CompaniesIHaveWorkedWithSlice/index.tsx"],"sourcesContent":["import { Content } from \"@prismicio/client\";\nimport { SliceComponentProps } from \"@prismicio/react\";\nimport type { JSX } from \"react\";\n\n/**\n * Props for `CompaniesIHaveWorkedWithSlice`.\n */\nexport type CompaniesIHaveWorkedWithSliceProps =\n  SliceComponentProps<Content.CompaniesIHaveWorkedWithSliceSlice>;\n\n/**\n * Component for \"CompaniesIHaveWorkedWithSlice\" Slices.\n */\nconst CompaniesIHaveWorkedWithSlice = ({\n  slice,\n}: CompaniesIHaveWorkedWithSliceProps): JSX.Element => {\n  return (\n    <section\n      data-slice-type={slice.slice_type}\n      data-slice-variation={slice.variation}\n    >\n\n    </section>\n  );\n};\n\nexport default CompaniesIHaveWorkedWithSlice;\n"],"names":[],"mappings":";;;;;AAUA;;CAEC,GACD,MAAM,gCAAgC,CAAC,EACrC,KAAK,EAC8B;IACnC,qBACE,8OAAC;QACC,mBAAiB,MAAM,UAAU;QACjC,wBAAsB,MAAM,SAAS;;;;;;AAK3C;uCAEe"}},
+    {"offset": {"line": 25, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

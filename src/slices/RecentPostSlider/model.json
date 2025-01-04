@@ -1,0 +1,39 @@
+{
+  "id": "recent_post_slider",
+  "type": "SharedSlice",
+  "name": "RecentPostSlider",
+  "description": "RecentPostSlider",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "related_post": {
+          "type": "Group",
+          "config": {
+            "label": "Related Post",
+            "repeat": true,
+            "fields": {
+              "blog_posts": {
+                "type": "Link",
+                "config": {
+                  "label": "Blog Posts",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "blog_post"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

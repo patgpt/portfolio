@@ -31,6 +31,17 @@
             "allowText": true,
             "repeat": false
           }
+        },
+        "profile_image": {
+          "type": "Image",
+          "config": {
+            "label": "Profile Image",
+            "constraint": {
+              "width": 200,
+              "height": 200
+            },
+            "thumbnails": []
+          }
         }
       },
       "items": {}

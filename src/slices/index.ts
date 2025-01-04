@@ -4,14 +4,19 @@ import dynamic from "next/dynamic";
 
 export const components = {
   about_me_slice: dynamic(() => import("./AboutMeSlice")),
-
+  availablity_slice: dynamic(() => import("./AvailablitySlice")),
+  companies_i_have_worked_with_slice: dynamic(
+    () => import("./CompaniesIHaveWorkedWithSlice"),
+  ),
   hero: dynamic(() => import("./Hero")),
   logo: dynamic(() => import("./Logo")),
+  my_stack: dynamic(() => import("./MyStack")),
   navigation_item: dynamic(() => import("./NavigationItem")),
 
-  parallaxed_banner_with_title: dynamic(
-    () => import("./ParallaxedBannerWithTitle"),
-  ),
+  pfp_slice: dynamic(() => import("./PfpSlice")),
+  recent_post_slider: dynamic(() => import("./RecentPostSlider")),
   rich_text_block: dynamic(() => import("./RichTextBlock")),
   service: dynamic(() => import("./Service")),
+  social_slice: dynamic(() => import("./SocialSlice")),
+  welcome_text_slice: dynamic(() => import("./WelcomeTextSlice")),
 };
