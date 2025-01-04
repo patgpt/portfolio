@@ -7,6 +7,7 @@ import { BackToTop } from "@/components/BackToTop";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Next.js + Prismic Starter",
@@ -36,6 +37,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <BackToTop />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
