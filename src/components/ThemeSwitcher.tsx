@@ -15,7 +15,7 @@ import {
 
 function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -82,7 +82,7 @@ function ThemeSwitcher() {
                 className={`flex items-center gap-1.5 py-1.5 text-base-content hover:bg-base-200 ${
                   theme === t.name ? "bg-base-200 font-medium" : ""
                 }`}
-                onClick={() => setTheme(t.name)}
+                // onClick={() => setTheme(t.name)}
               >
                 <span className="text-base">{t.icon}</span>
                 <span className="text-xs">{t.label}</span>
