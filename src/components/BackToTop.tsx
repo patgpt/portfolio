@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { IoArrowUpCircleOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
-
+// TODO: Add a comment
 export const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
