@@ -2,5 +2,8 @@
   "/page": "app/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/blog/[uid]/page": "app/blog/[uid]/page.js",
-  "/slice-simulator/page": "app/slice-simulator/page.js"
+  "/slice-simulator/page": "app/slice-simulator/page.js",
+  "/experience/page": "app/experience/page.js",
+  "/experience/[uid]/page": "app/experience/[uid]/page.js",
+  "/blog/page": "app/blog/page.js"
 }

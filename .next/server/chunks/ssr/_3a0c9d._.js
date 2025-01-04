@@ -26,6 +26,13 @@ const components = {
             ]
         }
     }),
+    companies_i_have_worked_with_slice: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_require__("[project]/src/slices/CompaniesIHaveWorkedWithSlice/index.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_import__), {
+        loadableGenerated: {
+            modules: [
+                "src/slices/index.ts -> " + "./CompaniesIHaveWorkedWithSlice"
+            ]
+        }
+    }),
     hero: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_require__("[project]/src/slices/Hero/index.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_import__), {
         loadableGenerated: {
             modules: [
@@ -54,17 +61,17 @@ const components = {
             ]
         }
     }),
-    parallaxed_banner_with_title: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_require__("[project]/src/slices/ParallaxedBannerWithTitle/index.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_import__), {
-        loadableGenerated: {
-            modules: [
-                "src/slices/index.ts -> " + "./ParallaxedBannerWithTitle"
-            ]
-        }
-    }),
     pfp_slice: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_require__("[project]/src/slices/PfpSlice/index.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_import__), {
         loadableGenerated: {
             modules: [
                 "src/slices/index.ts -> " + "./PfpSlice"
+            ]
+        }
+    }),
+    recent_post_slider: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_require__("[project]/src/slices/RecentPostSlider/index.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_import__), {
+        loadableGenerated: {
+            modules: [
+                "src/slices/index.ts -> " + "./RecentPostSlider"
             ]
         }
     }),
@@ -86,6 +93,13 @@ const components = {
         loadableGenerated: {
             modules: [
                 "src/slices/index.ts -> " + "./SocialSlice"
+            ]
+        }
+    }),
+    welcome_text_slice: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_require__("[project]/src/slices/WelcomeTextSlice/index.tsx [app-rsc] (ecmascript, async loader)")(__turbopack_import__), {
+        loadableGenerated: {
+            modules: [
+                "src/slices/index.ts -> " + "./WelcomeTextSlice"
             ]
         }
     })
