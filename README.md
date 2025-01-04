@@ -4,6 +4,18 @@
 [![Next.js](https://img.shields.io/badge/Next.js-15.1.0-black)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.1-38B2AC)](https://tailwindcss.com/)
 
+<!-- Status Badges -->
+[![Netlify Status](https://api.netlify.com/api/v1/badges/your-id/deploy-status)](https://app.netlify.com/sites/your-site/deploys)
+[![CI/CD](https://github.com/username/portfolio/actions/workflows/main.yml/badge.svg)](https://github.com/username/portfolio/actions)
+[![Uptime](https://img.shields.io/uptimerobot/ratio/7/m123456789-123456789012345)](https://stats.uptimerobot.com/)
+
+<!-- Stack Badges -->
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Prismic CMS](https://img.shields.io/badge/Prismic_CMS-latest-white?logo=prismic)](https://prismic.io/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.18.0-ff69b4)](https://www.framer.com/motion/)
+[![DaisyUI](https://img.shields.io/badge/DaisyUI-4.6.0-green)](https://daisyui.com/)
+[![ESLint](https://img.shields.io/badge/ESLint-8.56.0-4B32C3?logo=eslint)](https://eslint.org/)
+
 A modern, performant portfolio website built with Next.js, Prismic CMS, and Tailwind CSS.
 
 ## 🚀 Demo
@@ -54,6 +66,7 @@ portfolio/
 ### Environment Setup
 
 1. **Create `.env.local`**:
+
    ```bash
    NEXT_PUBLIC_PRISMIC_ENDPOINT=your-repo-name.cdn.prismic.io
    PRISMIC_ACCESS_TOKEN=your-access-token
@@ -62,6 +75,7 @@ portfolio/
 ### Installation
 
 1. **Clone and Install**
+
    ```bash
    git clone https://github.com/your-username/portfolio.git
    cd portfolio
@@ -69,6 +83,7 @@ portfolio/
    ```
 
 2. **Start Development Server**
+
    ```bash
    bun run dev
    ```
@@ -97,13 +112,38 @@ We welcome contributions! Please follow these steps:
 
 ### Commit Convention
 
-Follow [Conventional Commits](https://www.conventionalcommits.org/):
-- `feat:` New features
-- `fix:` Bug fixes
-- `docs:` Documentation changes
-- `style:` Code style changes
-- `refactor:` Code refactoring
-- `test:` Test changes
+We use [Conventional Commits](https://www.conventionalcommits.org/) specification for commit messages. This is automatically enforced using [Husky](https://typicode.github.io/husky/), which checks your commit messages before they're finalized.
+
+#### How it works
+
+Your commit message should be structured like this:
+
+```
+type(scope): description
+
+[optional body]
+[optional footer(s)]
+```
+
+Common types include:
+
+- `feat:` A new feature (e.g., `feat: add dark mode toggle`)
+- `fix:` A bug fix (e.g., `fix: resolve mobile menu overlap`)
+- `docs:` Documentation changes (e.g., `docs: update installation steps`)
+- `style:` Code style changes (e.g., `style: format with prettier`)
+- `refactor:` Code changes that neither fix bugs nor add features
+- `test:` Adding or modifying tests
+- `chore:` Updates to build process, tools, etc.
+
+If you try to commit without following this format, Husky will prevent the commit and show an error message. This helps maintain consistent commit history!
+
+#### Example commit messages
+
+```bash
+feat(nav): add hamburger menu for mobile
+fix(auth): resolve login timeout issue
+docs(readme): update deployment instructions
+```
 
 ## 📄 License
 
