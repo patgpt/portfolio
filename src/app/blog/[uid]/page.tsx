@@ -4,7 +4,7 @@ import { PrismicRichText } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 
-import Container from "@/components/Layout/Container";
+import Container from "@/components/Container";
 
 import ParallaxImage from "@/components/ParallaxImage";
 import Link from "next/link";

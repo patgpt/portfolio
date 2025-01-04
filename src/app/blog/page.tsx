@@ -5,7 +5,7 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
 import BlogPostCard from "@/components/BlogPostCard";
-import Container from "@/components/Layout/Container";
+import Container from "@/components/Container";
 
 export default async function Page() {
   const client = createClient();

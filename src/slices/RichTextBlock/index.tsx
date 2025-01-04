@@ -1,4 +1,4 @@
-import Container from "@/components/Layout/Container";
+import Container from "@/components/Container";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import type { JSX } from "react";

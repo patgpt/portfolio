@@ -4,7 +4,7 @@ import { PrismicRichText, SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import Container from "@/components/Layout/Container";
+import Container from "@/components/Container";
 import { PrismicNextImage } from "@prismicio/next";
 import ParallaxImage from "@/components/ParallaxImage";
 import Link from "next/link";

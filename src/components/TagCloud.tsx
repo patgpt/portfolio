@@ -1,5 +1,5 @@
 
-import Bounded from "@/components/Layout/Bounded";
+import Bounded from "@/components/Bounded";
 import React from "react";
 
 interface TagCloudProps {
