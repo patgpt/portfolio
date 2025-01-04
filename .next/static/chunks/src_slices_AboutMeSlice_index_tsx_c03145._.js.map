@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/agimanifesto/_dev/portfolio/src/slices/AboutMeSlice/index.tsx"],"sourcesContent":[" \nimport { Content } from \"@prismicio/client\";\nimport { PrismicNextLink } from \"@prismicio/next\";\n\nimport { PrismicRichText, SliceComponentProps } from \"@prismicio/react\";\nimport type { JSX } from \"react\";\n\n/**\n * Props for `AboutMeSlice`.\n */\nexport type AboutMeSliceProps = SliceComponentProps<Content.AboutMeSliceSlice>;\n\n/**\n * Component for \"AboutMeSlice\" Slices.\n */\nconst AboutMeSlice = ({ slice }: AboutMeSliceProps): JSX.Element => {\n  return (\n    <BentoBox size=\"medium\" className=\"text-center\">\n      <PrismicRichText field={slice.primary.about_me_text} />\n      <PrismicNextLink field={slice.primary.get_in_touch_cta}>\n        {slice.primary.get_in_touch_cta.text}\n      </PrismicNextLink>\n    </BentoBox>\n  );\n};\n\nexport default AboutMeSlice;\n"],"names":[],"mappings":";;;;AAIA;AAFA;;;;AAUA;;CAEC,GACD,MAAM,eAAe,CAAC,EAAE,KAAK,EAAqB;IAChD,qBACE,6LAAC;QAAS,MAAK;QAAS,WAAU;;0BAChC,6LAAC,kKAAA,CAAA,kBAAe;gBAAC,OAAO,MAAM,OAAO,CAAC,aAAa;;;;;;0BACnD,6LAAC,iKAAA,CAAA,kBAAe;gBAAC,OAAO,MAAM,OAAO,CAAC,gBAAgB;0BACnD,MAAM,OAAO,CAAC,gBAAgB,CAAC,IAAI;;;;;;;;;;;;AAI5C;KATM;uCAWS"}},
-    {"offset": {"line": 52, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

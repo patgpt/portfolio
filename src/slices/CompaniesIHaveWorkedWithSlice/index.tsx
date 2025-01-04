@@ -37,7 +37,7 @@ const CompaniesIHaveWorkedWithSlice = ({
       data-slice-variation={slice.variation}
       className="col-span-1 lg:col-span-2"
     >
-      <BentoBox variant="primary" size="medium">
+      <BentoBox   size="medium">
         <PrismicRichText field={slice.primary.title} />
         <div className="relative h-60 overflow-hidden">
           <AnimatePresence mode="wait">
